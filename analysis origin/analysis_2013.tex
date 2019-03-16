@@ -1,0 +1,116 @@
+\section{2013数分}
+\begin{enumerate}
+\item 计算
+\begin{description}
+\item[(1)] $\lim_{n\to \infty} \sin^2(\pi\sqrt{n^2+n})$
+\item[解]
+\begin{eqnarray*}
+&=& \lim_{n\to \infty}\sin^2(\pi\sqrt{n^2+n}-\pi n)\\
+&=& \lim_{n\to \infty}\sin^2\left(\frac{n\pi}{\sqrt{n^2+n}+n} \right)\\
+&=& \lim_{n\to \infty}\sin^2\frac{\pi}{\sqrt{1+\frac{1}{n}}+1}\\
+& =& \sin^2 \left(\lim_{n\to \infty}\frac{\pi}{\sqrt{1+\frac{1}{n}}+1}\right)\\
+&=& \sin^2\frac{\pi}{2} = 1
+\end{eqnarray*}
+
+\item[(2)] $\lim_{n\to \infty} a_n$，其中设$a_1=1,a_{n+1}=1+\frac{1}{a_n}$
+\item[解] 见数学分析中的典型问题和方法P95，首先解$A=1+\frac{1}{A}$，并且发现$a_n>0$。再通分$|a_{n+1}-a_n|$，然后发现$a_na_{n+1}>1$，相邻项之间间距缩小
+\end{description}
+
+\item 设$f(x)$连续，$g(x)=\int_0^x f(x-t)\sin t\ud t$，证$g''(x)+g(x)=f(x),g(0)=g'(0)=0$
+\begin{description}
+\item[证]
+\begin{eqnarray*}
+g'(x) &=& \int_0^x f'(x-t)\sin t\ud t + f(0)\sin x\\
+g''(x) &=& \int_0^x f''(x-t)\sin t\ud t + f'(0)\sin x + f(0)\cos x\\
+\end{eqnarray*}
+显然$g(0)=g'(0)=0$
+\begin{eqnarray*}
+\int_0^x f(x-t)\sin t\ud t &=& -\int_0^x f(x-t)\ud \cos t \\
+&=& - f(x-t) \cos t |_0^x + \int_0^x f'(x-t) \cos t \ud t\\
+\end{eqnarray*}
+后者
+\begin{eqnarray*}
+\int_0^x f'(x-t)\ud \sin t = f'(x-t) \sin t |_0^x - \int_0^x f''(x-t) \sin t \ud t
+\end{eqnarray*}
+好像符号不太对，再检查下
+\end{description}
+
+\item 求曲线$y=e^x$的曲率的最大值
+\begin{description}
+\item[解] 由曲率公式
+\[
+\kappa = \frac{|y''|}{(1+y'^2)^\frac{3}{2}} (y''\neq 0)
+\]
+即
+\begin{eqnarray*}
+\kappa &=& \frac{e^x}{(1+e^{2x})^\frac{3}{2}}\\
+\kappa' &=& \frac{e^x(1+e^{2x})^\frac{3}{2}-3e^x(1+e^{2x})^\frac{1}{2}e^{2x}}{(1+e^{2x})^3}
+\end{eqnarray*}
+解得$x=\ln(\sqrt{\frac{1}{2}})$
+\end{description}
+
+\item 计算积分
+\begin{description}
+\item[(1)]
+\[
+I = \int_{\frac{1}{4}}^{\frac{1}{2}}\ud y \int_{\sqrt{y}}^{\frac{1}{2}}e^{\frac{y}{x}} \ud x + \int_{\frac{1}{2}}^1 \ud y \int_{\sqrt{y}}^1 e^{\frac{y}{x}} \ud x
+\]
+\item[(2)]
+\[
+J = \iint_{\omega} |x^2+y^2-1|\ud x \ud y
+\]
+其中$\omega=\{(x,y)|x\leq x\leq 1,0\leq y\leq 1\}$
+\end{description}
+
+\item 讨论级数$\sum_{n=1}^{\infty}\frac{n^2}{(x+\frac{1}{n})^n}$的收敛性和一致收敛性（包括内闭一致收敛性）
+
+\item 证明
+\begin{description}
+\item[(1)] 当$0<x<\frac{\pi}{2}$时，$\frac{2}{\pi}<\frac{\sin x}{x}<1$
+\item[解] 右边$f(x)=\sin x-x$，则$f(0)=0$，$f'(x)=\cos x -1$，$x>0$时，$f'(x)<0$。左边$g(x)=\pi\sin x-2x$，则$g(\frac{\pi}{2})=g(0)=0$，$g'(x)=\pi\cos x-2=0$，得$x=?$，所有极值点都是大于0的
+\item[(2)] 设函数$f(x)$在闭区间$[a,b]$上二次可微，且$f''(x)<0$，则
+\[
+\frac{f(a)+f(b)}{2} \leq \frac{1}{b-a}\int_a^b f(t)dt
+\]
+\item[解] 看上凸函数的性质然后就是梯形面积和积分面积的比较，把梯形斜边表示出来，然后用$f(t)$去减，再用上凸函数的性质。另见数学分析中的典型问题和方法P365的4.3.26
+\end{description}
+
+\item 求函数$f(x,y)=x^2+y^2+\frac{3}{2}x +1$在集合$G=\{(x,y)\in \mathbf{R}^2|4x^2+y^2-1=0\}$上的最值
+
+\item 设无穷实数列$\{a_n\},\{b_n\}$满足
+\[
+a_{n+1} = b_n - \frac{na_n}{2n+1}
+\]
+证
+\begin{description}
+\item[(1)] 若$\{b_n\}$有界，则$\{a_n\}$也有界
+\item[(2)] 若$\{b_n\}$收敛，则$\{a_n\}$也收敛
+\item[证(1)] 不会
+\item[证(2)] 用上面的有界，然后经典的$a_{n+1}-kb=-\frac{1}{2}(a_n-kb)+\epsilon_n$
+
+\end{description}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}

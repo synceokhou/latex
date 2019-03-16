@@ -1,0 +1,88 @@
+\section{2014高代}
+\begin{enumerate}
+\item $f=f_0(x^n)+xf_1(x^n)+\cdots+x^{n-1}f_{n-1}(x^n)$，$f$可被$x^{n-1}+x^{n-2}+\cdots+1$整除，求证$f_i'(1)=1$
+\begin{description}
+\item[证] 令$\xi= e^{i\frac{2\pi}{n}}$，则$\xi,\cdots,\xi^{n-1}$为$x^{n-1}+x^{n-2}+\cdots+1$的所有根，故$\xi,\cdots,\xi^{n-1}$也为$f$的根。然后就直接代入
+\[
+(\xi)_{n\times n}(f_i(x))_{n\times 1}=(0)_{n\times 1}
+\]
+\end{description}
+\item $f(x),g(x)$分别为$3$次与$2$次
+\begin{description}
+\item[(1)] 存在次数小于$2$次的$u(x)$，次数小于$3$次的$v(x)$，使得$\res(f,g)=u(x)f(x)+v(x)g(x)$
+\item[(2)] $(f,g)=1$的充要条件是$\res(f,g)\neq 0$
+\item[证(1)] 用$g(x)$除$f(x)$有$f(x) = h(x)g(x)+r(x)$，其中$\deg(h(x)) = 1$。令$u(x)=1,v(x)=-h(x),\res(f,g) = r(x)$
+\end{description}
+
+\item 求
+\[
+\left[
+\begin{array}{ccccc}
+c & a & & & \\
+b & c & a & & \\
+ & b & \ddots & \ddots & \\
+ & & \ddots & \ddots & a \\
+ & & & b & c \\
+\end{array}\right]_{n\times n}
+\]
+其中$c^2 - 4ab \neq 0$
+\begin{description}
+\item[解] $D_n = cD_{n-1} - abD_{n-2}$，然后按照高中求等比数列拆，并且能拆两种
+\end{description}
+
+
+\item $A$为$m\times n$阶实矩阵，$\rank(A)=k$
+\begin{description}
+\item[(1)] $A = A_1 + \cdots + A_i$，$A_i$为一秩$m \times n$矩阵，则$i\geq k$
+\item[(2)] 存在一秩矩阵$A_1,\cdots,A_k$，$A=A_1+A_2+\cdots+A_k$
+\item[证(1)] 不妨设$A$为
+\[
+A= \left(
+\begin{array}{cc}
+E & 0 \\
+0 & 0 \\
+\end{array} \right)_{m\times n}
+\]
+若不为此类型，可通过左右乘初等矩阵变换而得
+\[
+A_i= \left(
+\begin{array}{cc}
+E_{ii} & 0 \\
+0 & 0 \\
+\end{array} \right)_{m\times n}
+\]
+反证，若$i < k$，显然等式右边不可能等于等式左边，故$i\geq k$
+\item[证(2)] 取(1)中假设，则有$A=A_1+A_2+\cdots+A_k$
+\end{description}
+
+\item 任一复矩阵可表示为两对称矩阵之积，其中一可逆
+\begin{description}
+\item[证] 见后几页的证明
+\end{description}
+
+\item
+\[
+A= \left(
+\begin{array}{cc}
+1 & \frac{x}{n} \\
+-\frac{x}{n} & 1 \\
+\end{array} \right)
+\]
+其中$x\neq 0 $，求$\lim_{x \to 0}\lim_{n \to \infty}(A^n - E)$
+\begin{description}
+\item[证] 找特征多项式，然后用$(A^n - E)$除以特征多项式得余式再求特征值？考点就是多项式除法和化简？
+\[
+f(A) = f(\mu_1)\frac{A-\mu_2E}{\mu_1-\mu_2}+f(\mu_2)\frac{A-\mu_1E}{\mu_2-\mu_1}
+\]
+\end{description}
+
+\item $A=(a_{ij})_{n\times n},B=(b_{ij})_{n\times n},C=(a_{ij}b_{ij})_{n\times n}$，若$A,B$为半正定，证$C$为半正定
+\begin{description}
+\item[证] 见高等代数上P356第10题
+\end{description}
+
+\item 设$u$为$\mathbf{R}^5$中一个单位向量，定义$\tau_u(x) = x - 2(x,u)u$，设$\alpha,\beta$为两个非线性相关的单位向量，求$\alpha,\beta$满足什么条件，存在正整数$k$，$(\tau_\alpha\tau_\beta)^k$为单位映射
+\begin{description}
+\item[证] $\tau_u(x)$是$x$对$u$的镜面，$(\tau_\alpha\tau_\beta)$也就是对$(\tau_{\alpha+\beta})$镜像，镜像之后的整数倍要能回到原位置。在$\alpha$和$\beta$的所在平面，一个二维子空间内把$\tau$表示为二维矩阵，剩下的三维空间取标准正交基。又有，二维空间的正交变换可表示为高等代数下P$496$例二。也可以用向量运算，不过比较抽象，具体的向量运算见高等代数下P$498$
+\end{description}
+\end{enumerate}

@@ -1,0 +1,133 @@
+\section{2016数分}
+\begin{enumerate}
+\item 计算极限
+\[
+\lim_{x \to 0}\left( \frac{e^x+e^{2x}+\cdots + e^{nx}}{n} \right)^{\frac{1}{x}}
+\]
+\begin{description}
+\item[解]
+\begin{eqnarray*}
+ & = & \lim_{x \to 0} \exp\left[\frac{1}{x} \ln\left( \frac{e^x+e^{2x}+\cdots + e^{nx}}{n} \right)\right] \\
+ & = & \lim_{x \to 0} \exp\left[\frac{1}{x} \ln\left(1+ \frac{(e^x-1)+(e^{2x}-1)+\cdots + (e^{nx}-1)}{n} \right)\right] \\
+ & = & \lim_{x \to 0} \exp\left[\frac{(e^x-1)+(e^{2x}-1)+\cdots + (e^{nx}-1)}{nx} \right] 
+\end{eqnarray*}
+\end{description}
+
+\item 求定积分
+\[
+I = \int_0^1 \log(1+\sqrt{x}) \ud x
+\]
+\begin{description}
+\item[解] 令$t=\sqrt{x}$，则$t\in [0,1]$
+\[
+I = \int_0^1 \log(1+t)\ud t^2 = t^2\log(1+t)|_0^1-\int_0^1 \frac{t^2}{1+t}\ud t
+\]
+后者加1减1即可积出
+\end{description}
+
+\item 求二重极限
+\[
+\lim_{ \substack {x \to \infty \\ y \to \infty} } \frac{x+y}{x^2-xy+y^2}
+\]
+\begin{description}
+\item[解] 由$x^2+y^2 \geq 2xy$
+\begin{eqnarray*}
+\left|\frac{x+y}{x^2-xy+y^2}\right| & \leq  & \frac{|x+y|}{x^2+y^2-|xy|}\\
+& \leq  & \frac{|x+y|}{x^2+y^2-\frac{1}{2}(x^2+y^2)}\\
+& \leq  & 2\frac{|x|+|y|}{x^2+y^2}\\
+& \leq  & 2\frac{|x|+|y|}{2|x||y|}
+\end{eqnarray*}
+\end{description}
+
+\item $f(x)$是[a,b]上的连续正函数，求证$\exists \xi \in (a,b)$，使得
+\[
+\int_a^{\xi} f(x)\ud x = \int_{\xi}^b f(x)\ud x = \frac{1}{2}\int_a^b f(x)\ud x
+\]
+\begin{description}
+\item[证] 令$g(t) = \int_a^t f(x)\ud x - \frac{1}{2}\int_a^b f(x)\ud x$，显然$g(x)$连续，再由零点定理。另证
+\[
+\int_a^{\xi} f(x)\ud x - \int_{\xi}^b f(x)\ud x = \int_a^{\xi} f(x)\ud x + \int_b^{\xi} f(x)\ud x
+\]
+由此，可记后者为$F(\xi)$，又$F(a)<0,F(b)>0$，由零点定理可知。
+\end{description}
+
+\item 求以下曲面所围立体的体积
+\[
+\begin{array}{l}
+S_1:\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2} =1\\
+S_2:\frac{x^2}{a^2}+\frac{y^2}{b^2} = \frac{z^2}{c^2}(z\geq 0)
+\end{array}
+\]
+\begin{description}
+\item[解] 我的方法是二重积分，因为$z\geq 0$。所以表示出$z_1-z_2$之后用极坐标替换变量，注意求出交线，以确定平面积分范围
+\end{description}
+
+\item $f(x)$是$[a,b]$上的连续函数，且$f(x)$单调递增。求证
+\[
+\int_a^b tf(t)\ud t \geq \frac{a+b}{2}\int_a^b f(t)\ud t
+\]
+\begin{description}
+\item[证] 令$x=t-\frac{a+b}{2}$，原式变为
+\[
+\int_0^{\frac{b-a}{2}} x\left(f(\frac{a+b}{2}+x)-f(\frac{a+b}{2}-x)\right) \ud x
+\]
+数学分析中的典型问题和方法P370的例子4.3.32
+\end{description}
+
+\item 若数列$\{a_n\},\{b_n\}$满足以下条件
+\begin{description}
+\item[(1)] $a_1 \geq a_1 \geq \cdots$且$\lim_{n \to \infty}a_n = 0$
+\item[(2)] $\exists M \in \mathbf{R^+},\forall n \in \mathbf{Z^+}$，有$|\sum_{k=1}^n b_k|\leq M$
+\end{description}
+证明$\sum_{n=1}^\infty a_nb_n$收敛
+\begin{description}
+\item[证] 阿贝尔变换的式子，把$\sum_{i=m+1}^n a_nb_n$拆开变成$|\sum_{i=m+1}^{n-1}(a_i-a_{i-1})B_i+a_nB_n-a_{m+1}B_m|$
+\end{description}
+
+\item 设$0\leq a < \frac{b}{2}$，$f(x)$在$[a,b]$上连续，在$(a,b)$上可导且$f(a)=a,f(b)=b$
+\begin{description}
+\item[(1)] 求证$\exists \xi \in (a,b)$，使得$f(\xi) = b -\xi$
+\item[(2)] 若$a=0$，求证$\exists \alpha,\beta \in (a,b),\alpha\neq\beta$，使得$f'(\alpha)f'(\beta)=1$
+\item[证(1)] 令$F(x)=f(x)-b+x$，则由$F(a)=2a-b<0,F(b)=b>0$和零点定理。
+\item[证(2)] 刚才的$\xi$两边用拉格朗日
+\begin{eqnarray*}
+\frac{b-\xi}{\xi} &=& \frac{f(\xi)-f(0)}{\xi}=f'(\alpha)\\
+\frac{b-(b-\xi)}{b-\xi} &=& \frac{f(b)-f(\xi)}{b-\xi}=f'(\beta)
+\end{eqnarray*}
+上下两式乘
+\end{description}
+
+\item 求椭圆$x^2+4y^2=4$上到直线$2x+3y=6$距离最短的点，并求其最短距离
+\begin{description}
+\item[解] 这是一题函数最值的应用，按照题设的做法是拉格朗日乘数法，先列出等式了。但是解的时候要找切线，然后求椭圆的切线斜率与直线斜率相等的点，显然会得出两个点，反过来求拉格朗日的参数
+\end{description}
+
+\item 半径为$R$的球面$S$的球心在单位球面$x^2+y^2+z^2=1$上，求球面$S$在单位球内面积的最大值，并求出此时的$R$
+\begin{description}
+\item[解] 把球心放在单位圆与坐标轴交点上，画图可求出在单位圆内的角度，然后可以重现建坐标系，以$S$的球心为原点用极坐标算面积
+\end{description}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}

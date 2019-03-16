@@ -1,0 +1,158 @@
+\section{2016高代}
+\begin{enumerate}
+
+\item 设$a_i + b_j \neq 0$，求以下矩阵的行列式值：
+\[
+A = \left(
+\begin{array}{cccc}
+(a_1+b_1)^{-1} & (a_1+b_2)^{-1} & \ldots & (a_1+b_n)^{-1} \\
+(a_2+b_1)^{-1} & (a_2+b_2)^{-1} & \ldots & (a_2+b_n)^{-1} \\
+\vdots & \vdots & \ddots & \vdots \\
+(a_n+b_1)^{-1} & (a_n+b_2)^{-1} & \ldots & (a_n+b_n)^{-1} \\
+\end{array} \right)
+\]
+\begin{description}
+\item[解] 非常正常的思路，将原矩阵变成上三角矩阵
+做变换，将第$1$行$\times -\frac{a_1+b_1}{a_i+b_1} +$第$i$行，得
+\[
+\left[
+\begin{array}{cccc}
+(a_1+b_1)^{-1} & (a_1+b_2)^{-1} & \ldots & (a_1+b_n)^{-1} \\
+0 & c_{22} & \ldots & c_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & c_{n2} & \ldots & c_{nn} \\
+\end{array}\right]
+\]
+其中$c_{ij} = \frac{(b_1-b_j)(a_1-a_i)}{(a_i+b_1)(a_1+b_j)(a_i+b_j)}$，于是列向量提$\frac{(b_1-b_j)}{(a_1+b_j)}$，行向量提$\frac{(a_1-a_i)}{(a_i+b_1)}$，剩下$(a_i+b_j)^{-1}$，然后
+\[
+D_n = (a_1+b_1)^{-1}\prod_{i=2}^n\frac{(b_1-b_i)(a_1-a_i)}{(a_i+b_1)(a_1+b_i)}D_{n-1}
+\]
+最后由递推关系得
+\[
+D = \frac{\prod_{1\leq i<j\leq n}(b_j-b_i)(a_j-a_i)}{\prod_{1\leq i<j\leq n}(a_i+b_j)}
+\]
+\end{description}
+
+\item 已知二次型$f(x_1,x_2,x_3)=5x_1^2+5x_2^2+\beta x_3^2-2x_1x_2+6x_1x_3-6x_2x_3$的秩为2
+\begin{description}
+\item[(1)]求$\beta$的值
+\item[(2)]求一实正交变换，将上述二次型化为标准型，并求出标准型
+\item[解(1)] 二次型的矩阵$A$为
+\[
+\left(
+\begin{array}{ccc}
+5 & -1 & 3 \\
+-1 & 5 & -3 \\
+3 & -3 & \beta\\
+\end{array} \right)
+\]
+其中
+\[
+\left[
+\begin{array}{cc}
+5 & -1 \\
+-1 & 5 \\
+\end{array} \right] \neq 0
+\]
+故$A$的秩大于等于2，当$|A|=0$时，$A$的秩等于2。故$\beta=3$时，$A$的秩等于2。
+\item[解(2)] $|\lambda E-A|=\lambda(\lambda-9)(\lambda-4)$，正交变换为
+\[
+\left(
+\begin{array}{ccc}
+\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{3}} \\
+-\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{3}} \\
+-\frac{2}{\sqrt{6}} & 0 & -\frac{1}{\sqrt{3}}\\
+\end{array} \right)
+\]
+\end{description}
+
+\item 矩阵$A$的$n-1$阶子式不全为零，给出齐次方程组$Ax^T=0$的一组解，并求方程所有的解，其中
+\[
+A = \left(
+\begin{array}{cccc}
+a_{11} & a_{12} & \ldots & a_{1n} \\
+a_{21} & a_{22} & \ldots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n-1,1} & a_{n-2,2} & \ldots & a_{n-1,n} \\
+\end{array} \right)
+\]
+\begin{description}
+\item[解] $A=(A_1,\cdots,A_n)$，由于矩阵$A$的$n-1$阶子式不全为零，故$A$的秩为$n-1$。则$A_1,\cdots,A_n$的$n$个列向量中有一个能被其他$n-1$个线性表出。不妨设$A_n = k_1A_1 + \cdots + k_{n-1}A_{n-1}$。
+则$x = (k_1,\cdots,k_{n-1},-1)^T$是齐次方程组$Ax^T=0$的一组解，并且该齐次方程组解空间是一维的，所以所有的解可以表示为$kx$
+\end{description}
+
+\item $V$是$n$维线性空间，$V_1,V_2$是$V$的子空间，且
+\[
+\dim(V_1+V_2) = \dim(V_1\cap V_2)+1
+\]
+求证：$V_1+V_2=V_1,V_1\cap V_2=V_2$或$V_1+V_2=V_2,V_1\cap V_2=V_1$
+\begin{description}
+\item[证] 由
+\[
+\dim(V_1+V_2) + \dim(V_1 \cap V_2)= \dim(V_1)+\dim(V_2)
+\]
+可得
+\[
+2\dim(V_1+V_2) = \dim(V_1) + \dim(V_2) + 1
+\]
+若$\dim(V_1+V_2)>\dim(V_1)$且$\dim(V_1+V_2)>\dim(V_2)$，则与上式矛盾
+\end{description}
+
+\item 证明与$n$阶若当块
+\[
+J=\left(
+\begin{array}{cccc}
+\lambda & 1 & & \\
+ & \lambda & \ddots & \\
+ & & \ddots & 1 \\
+ & & & \lambda \\
+\end{array} \right)
+\]
+可交换的矩阵必为$J$的多项式
+\begin{description}
+\item[证] 令
+\[
+J_0=\left(
+\begin{array}{cccc}
+0 & 1 & & \\
+ & 0 & \ddots & \\
+ & & \ddots & 1 \\
+ & & & 0 \\
+\end{array} \right)
+\]
+原命题变为与$J_0$可交换的$A$是$J$的多项式。$J_0$可交换的$A$的形式为
+\[
+A=\left(
+\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1n}\\
+ & \ddots & \ddots & \vdots \\
+ & & \ddots & a_{12} \\
+ & & & a_{11} \\
+\end{array} \right)
+\]
+由$J^k$组成的矩阵空间里面，$A$可被线性表出。
+\end{description}
+
+
+\item $n$阶方阵$A$的每行每列恰有一个元素为$1$或$-1$，其余元素均为零。证明存在正整数$m$使得$A^m=E$，其中$E$为单位矩阵
+\begin{description}
+\item[证] $A^k$均具有$A$的性质，而满足条件的矩阵只有有限个，存在$i<j$使得$A^i=A^j$
+\end{description}
+
+\item 设$A$是两个$n$阶复矩阵，定义$M_n(\mathbf{C})$上的线性变换$\tau(x)=AX-XA$。A的特征值为$\lambda_1,\lambda_2,\cdots,\lambda_n$（不考虑重根）。证明$\tau$的特征值必可写成$\lambda_i-\lambda_j(1\leq i,j \leq n)$的形式
+\begin{description}
+\item[证] $T^{-1}AT=D$，想办法凑出这个形式再用$E_{ij}$左乘右乘，$\tau(TE_{ij}T^{-1})=ATE_{ij}T^{-1}-TE_{ij}T^{-1}A=T(DE_{ij}-E_{ij}D)T^{-1}=(\lambda_i-\lambda_j)TE_{ij}T^{-1}$
+\end{description}
+
+\item 设$A,B$是两个$n$阶复矩阵，如果$AB-BA = 2B$，证明
+\begin{description}
+\item[(1)]存在$n$维列向量$u$和常数$\mu$，使得$Au = \mu u $和$Bu = 0$
+\item[(2)]$A,B$可同时上三角化
+\end{description}
+
+\item 设多项式$g(x)=p^k(x)g_1(x)(k\geq1)$,多项式$p(x)$与$g_1(x)$互素。证明对任意多项式$f(x)$有
+\[
+\frac{f(x)}{g(x)} = \frac{r(x)}{p^k(x)} + \frac{f_1(x)}{p^{k-1}(x)g_1(x)}
+\]
+其中$r(x),f_1(x)$都是多项式，$r(x)=0$或$r(x)$的次数小于$p(x)$
+\end{enumerate}

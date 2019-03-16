@@ -1,0 +1,104 @@
+\begin{itemize}
+\item 设$\mathbf{R}^3$中向量$\alpha_1=(-1,1,1)^T,\alpha_2=(1,-1,0)^T,\alpha_3=(1,0,-1)^T,\beta_1=(-4,3,4)^T,\beta_2=(4,-3,0)^T,\beta_3=(4,1,-4)^T$
+\begin{description}
+\item[(1)] 求$\beta_1$分别在基$\{\alpha_1,\alpha_2,\alpha_3\}$和基$\{\beta_1,\beta_2,\beta_3\}$下的坐标
+\item[(2)] 求从基$\{\alpha_1,\alpha_2,\alpha_3\}$到基$\{\beta_1,\beta_2,\beta_3\}$的过渡矩阵
+\item[(3)] 设$\mathbf{R}^3$中的线性变换$\mathcal{A}$使得$\mathcal{A}\alpha_1=\beta_1,\mathcal{A}\alpha_2=\beta_2,\mathcal{A}\alpha_3=\beta_3$，求$\mathcal{A}$在基$\{\alpha_1,\alpha_2,\alpha_3\}$和基$\{\beta_1,\beta_2,\beta_3\}$和标准基下的矩阵
+\item[(4)] 求$A$的特征多项式，最小多项式，特征值
+\item[(5)] 求$A$的不变因子，初等因子，若当标准型
+\item[解(1)]
+\[
+\beta_1 = (\alpha_1,\alpha_2,\alpha_3)\left(
+\begin{array}{c}
+x_1\\
+x_2\\
+x_3\\
+\end{array}
+\right)
+\]
+同理可算另一个
+\item[解(2)] $(\alpha_1,\alpha_2,\alpha_3)A=(\beta_1,\beta_2,\beta_3)$，则$A$为从基$\{\alpha_1,\alpha_2,\alpha_3\}$到基$\{\beta_1,\beta_2,\beta_3\}$
+\item[解(3)] $\mathcal{A}(\alpha_1,\alpha_2,\alpha_3)=(\alpha_1,\alpha_2,\alpha_3)A=(\beta_1,\beta_2,\beta_3)$，则$A$为$\mathcal{A}$在基$\{\alpha_1,\alpha_2,\alpha_3\}$下的矩阵。$\mathcal{A}(\beta_1,\beta_2,\beta_3)=(\beta_1,\beta_2,\beta_3)B=\mathcal{A}[(\alpha_1,\alpha_2,\alpha_3)A]=[\mathcal{A}(\alpha_1,\alpha_2,\alpha_3)]A=(\alpha_1,\alpha_2,\alpha_3)AA=(\beta_1,\beta_2,\beta_3)A^{-1}AA$。另一个相当于将后者向量组换成单位矩阵
+\end{description}
+
+\item 求经过三点$(3,0,0),(0,2,0),(0,0,1)$的平面的方程，以及过这三点的圆的方程
+\begin{description}
+\item[解] 平面方程长$ax+by+cz+d=0$，然后设一个球方程，有4个参数，最后有一个参数可以变，但是和前面平面合在一起还是表示同一个圆
+\end{description}
+
+\item 设$A$是数域$\mathbf{F}$上的$n$维线性空间$V$的线性变换，记
+\[
+V_1=\bigcup_{i=0}^{\infty} \ker A^i,V_2=\bigcap_{i=0}^{\infty} \Ima A^i
+\]
+证
+\begin{description}
+\item[(1)] $V_1,V_2$是$A$的不变子空间
+\item[(2)] $V=V_1+V_2$
+\item[证(1)] $\ker A^1 \subseteq \ker A^2 \cdots \subseteq \ker A^m = \ker A^{m+1} =\cdots,\Im A \supseteq \Im A^2 \supseteq \cdots \Im A^n = \Im A^{n+1} =\cdots$，取$k=\max\{m,n\}$所以$V_1=\ker A^{k},V_2=\Im A^{k}$，然后按定义
+\item[证(2)] 首先$V\supseteq V_1+V_2$不用说了，这个是证$\alpha_1\in V_1,\alpha_2\in V_2,\alpha_1 + \alpha_2\in V_1$。然后证$\dim(V)=\dim(V_1)+\dim(V_2)$，见2013年
+\end{description}
+
+\item 设实二次型$Q(x)=\sum_{i=1}^n(x_i-x)^2$，其中的$x=\frac{x_1+x_2+\cdots+x_n}{n}$，求$Q(x)$的秩和正负惯性指数
+\begin{description}
+\item[证] 把二次型的式子硬算
+\begin{eqnarray*}
+Q(x)&=&\sum_{i=1}^n x^2-2x\sum_{i=1}^n x_i+\sum_{i=1}^n x_i^2\\
+&=& n x^2-2nx^2+\sum_{i=1}^n x_i^2\\
+&=& \sum_{i=1}^n x_i^2 - nx^2 \\
+&=& \sum_{i=1}^n x_i^2 - \frac{1}{n}\sum_{i,j=1}^n x_ix_j \\
+\end{eqnarray*}
+矩阵长这样
+\[
+\begin{array}{ccc}
+1-\frac{1}{n} & -\frac{1}{n} & -\frac{1}{n}\\
+-\frac{1}{n} & 1-\frac{1}{n} & -\frac{1}{n}\\
+-\frac{1}{n} &-\frac{1}{n} & 1-\frac{1}{n}\\
+\end{array}
+\]
+全部加到最后一行，秩等于n-1，正惯性系数为n-1，负惯性系数为0
+\end{description}
+
+
+\item 设$A$是从$m$维欧氏空间$E_m$到$n$维欧氏空间$E_n$的线性映射，证存在$E_m$和$E_n$的标准正交基，使得$A$在他们下的矩阵形如
+\[
+\left(
+\begin{array}{cc}
+D & 0\\
+0 & 0
+\end{array}
+\right)
+\]
+其中的$D$是一个对角方阵
+\begin{description}
+\item[证] 见高等代数下9.3
+\[
+(\mathcal{A}\alpha_1,\mathcal{A}\alpha_2,\cdots,\mathcal{A}\alpha_n)=(\eta_1,\eta_2,\cdots,\eta_n)\left(
+\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1n}\\
+a_{21} & a_{22} & \cdots & a_{2n}\\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \cdots & a_{nn}\\
+\end{array}
+\right)
+\]
+可以观察到$n$维的$\alpha$和$s$维的$\eta$每个向量的分量数可以是一样的，见高等代数下9.3例9
+\end{description}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{itemize}

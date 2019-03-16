@@ -1,0 +1,203 @@
+%!TEX program = xelatex
+\documentclass[UTF8]{ctexart}
+
+\pagestyle{plain}
+\begin{document}
+
+
+\section{线性结构}
+\begin{itemize}
+	\item 队列是一种特殊的线性表，特殊之处在于它只允许在表的前端（front）进行删除操作，而在表的后端（rear）进行插入操作
+\end{itemize}
+
+\section{字符串}
+\begin{itemize}
+	\item KMP及其变种
+\end{itemize}
+
+\section{树}
+\begin{itemize}
+	\item B-树，多路搜索树，根结点的儿子数为[2, M]；除根结点以外的非叶子结点的儿子数为[M/2, M]；所有叶子结点位于同一层；还有儿子与父母大小关系
+	\item B+树，是B-树变体，叶子结点存所有数据，父母节点存儿子节点最小的元素
+\end{itemize}
+
+\section{图}
+\begin{itemize}
+	\item AOE，先算事件发生最早，然后事件发生最迟，然后活动发生最早，活动发生最迟，最后活动差额为0的
+	\item 连通分量与极大连通子图
+\end{itemize}
+
+
+\section{查找}
+\begin{itemize}
+	\item 各种查找算法的查找长度，以二叉树为例，成功的数节点，失败的数边
+	\item 平衡二叉树的递推公式，$N_0 = 0$，$N_1 = 1$，$N_2= 2$，$N_h = 1+N_{h-1}+N_{h-2}$
+\end{itemize}
+
+
+
+\section{排序}
+\begin{itemize}
+	\item 各种内部排序的比较P311
+	\item 堆排序，建堆的时候用shiftDown而不是插入的shiftup
+	\item 二路归并，比如是10个，第一轮2、2、2、2、2，第二轮4、4、2
+\end{itemize}
+
+\section{计算机概述}
+\begin{itemize}
+	\item CPI定义：执行一条指令花费时钟周期数
+	\item MIPS：每秒执行多少百万条指令
+\end{itemize}
+
+\section{机器数}
+\begin{itemize}
+	\item 单精度32位：1位符号位S，8位移码E，范围是1到255（原码+127），23位隐含1的原码M，即$(-1)^S\times1.M\times2^{E-127}$，
+	\item 运算的对阶，小对大
+	\item 只有上溢出中断，没有下
+	\item 大端、小端（地位低地址，放在内存的前面）
+	\item 奇偶校验法，奇校验整个校验码中1的个数为奇数
+	\item 补码运算对PSW的影响第四套43
+	\item 当用移码表示阶码，能用全零表示机器零的阶码
+	\item 最简单的浮点数舍入处理是截尾法
+	\item 浮点数规格化，右规：尾数右移一位，阶码+1，左规：尾数左移一位，阶码-1
+\end{itemize}
+
+\section{指令}
+\begin{itemize}
+	\item 各种寻址方式的比较P153
+	\item 与基址变址寻址方式相类似，相对寻址以程序计数器PC的当前值（R15中的值）为基地址，指令中的地址标号作为偏移量，将两者相加后得到操作数的有效地址
+	\item 微程序的指令流程
+	\item 水平型编码控制的微指令格式P207
+	\item 流水线的优化
+	\item 流水线的时空图
+	\item 流水线的吞吐率TP=任务数N/任务周期数T
+	\item 流水线的效率=任务所占面积/总面积
+	\item 指令字长一般是存储字长的整数倍
+	\item RISC指令集
+
+
+\end{itemize}
+
+\section{CPU}
+\begin{itemize}
+	\item PSW不属于控制器
+\end{itemize}
+
+\section{存储器}
+\begin{itemize}
+	\item SRAM与DRAM的定义与比较P92，前者比较高级
+	\item 读写周期
+
+	\item ROM分两次传送地址，所以地址线是RAM的一半
+
+	\item cache分为直接映射（模个数）、x-路组相联映射（模个数除以x）
+	\item TLB有效存储时间
+	\item 交叉存储器，高位多体交叉在单个存储器中连续存放，不能保证程序局部性，低位多体交叉在多个存储器中交叉存放
+	\item cache主存系统的访问效率，cache命中率$H = \frac{N_c}{N_c+N_m}$，主存慢于cache倍数$r=\frac{T_m}{T_c}$，访问效率$e=\frac{1}{H+r(1-H)}=\frac{T_c(N_c+N_m)}{T_cN_c+T_m(N_m)}$
+
+\end{itemize}
+
+\section{总线}
+\begin{itemize}
+	\item 总线仲裁三种比较P244
+	\item PCI总线的特点
+\end{itemize}
+
+\section{中断}
+\begin{itemize}
+	\item 进中断的流程P271
+	\item 中断向量是中断服务程序的入口地址，中断向量地址是“中断服务程序的入口地址”的地址
+	\item 一个高级中断屏蔽了低级中断，则要返回到主程序才能相应低级中断
+	\item 中断程序有可能是用户程序，但是中断处理程序一定是OS程序
+	\item 缺页中断与一般中断的区别，缺页中断在指令执行期间产生并处理，一般中断要指令结束处理，一条指令可能产生多次缺页中断
+	\item 缺页，访问内存页表+中断处理+访问内存页表+访问内存
+\end{itemize}
+
+\section{IO}
+\begin{itemize}
+	\item DMA，在内存和IO设备之间直接进行数据交换，不需要CPU的干预。当需要IO数据传输时，CPU将DMA初始化，之后DMA接管总线的使用权，将所需要的数据全部读入内存后，IO设备的控制器才会发出中断
+	\item 通道有独立的处理器，有自身IO指令，没有自己内存，与主存共享空间，通道指令放在内存；能执行有限通道指令的IO控制器，代替CPU管理控制外设。通道有自己的指令系统，是一个协处理器，一般用在大型计算机系统中(不是大型机)。通道实质是一台能够执行有限的输入输出指令，并能被多台外设共享的小型DMA专用处理机
+	\item 通道管理涉及的数据结构
+\end{itemize}
+
+\section{CPU调度}
+\begin{itemize}
+	\item 各种调度算法的比较
+	\item 高响应比优先，响应比=（等待时间+要求服务时间）/要求服务时间
+	\item CPU利用率
+	\item 系统吞吐率表示单位时间内CPU完成的作业数量
+	\item 周转时间=作业完成时间-作业提交时间
+	\item 平均周转时间=（作业1周转时间+作业2周转时间+作业n周转时间）/n
+	\item 带权周转时间=作业周转时间/作业实际运行时间
+	\item 平均带权周转时间=（作业1带权周转时间+作业2带权周转时间+作业n带权周转时间）/n
+	\item 等待时间指进程处于等处理机状态时间之和
+	\item 响应时间指从用户提交请求到系统首次产生响应所用时间
+	\item FCFS有利于长作业，不利于短作业，CPU繁忙为长作业，IO繁忙为短作业
+\end{itemize}
+
+\section{内存管理}
+\begin{itemize}
+	\item 静态重定位是装配程序完成的，动态重定位是运行时计算的，页式是动态重定位
+	\item 多级页表算法，出到页表项之后可以直接指数除
+\end{itemize}
+
+\section{磁盘管理}
+\begin{itemize}
+	\item 最短寻道优先，每次都找最近的
+	\item 读写磁盘的时间
+\end{itemize}
+
+
+\section{同步互斥}
+\begin{itemize}
+	\item 信号量
+	\item PV操作请背题目，管程
+	\item 两个通信模块之间同步通信、异步通信全锁半锁无锁
+	\item 互斥信号量初始值为1，同步为自定
+\end{itemize}
+
+\section{死锁}
+\begin{itemize}
+	\item 死锁充分必要条件
+	\item 银行家算法
+\end{itemize}
+
+\section{单位的区别}
+\begin{itemize}
+	\item 硬盘传送速率中的K是按1000来算的，不是1024
+\end{itemize}
+
+
+\section{网络的基本参数}
+\begin{itemize}
+	\item 总时延=发送时延+传播时延
+	\item 信道利用率=发送时间/(发送时间+2X传播时间)
+	\item 网络接口层的SAP是MAC地址，网络层的SAP是IP地址，TCP、UDP是端口号
+\end{itemize}
+
+\section{以太网}
+\begin{itemize}
+	\item 介质访问冲突，二进制指数退避算法
+	\item CSMA三种：1-坚持，空闲则发，不空闲坚持监听；p-坚持，空闲则p概率发，1-p概率延迟再监听；非坚持，空闲则发，不空闲延迟再监听
+	\item CSMA/CD协议，最大帧碎片长度必须小于最小帧长度，任何接收到帧长小于最小帧长度的就丢弃
+\end{itemize}
+
+\section{IP}
+\begin{itemize}
+	\item 记得IP数据报因太大分片，每个片去掉头20，合在一起要加回20
+	\item 广播域，IP层，路由器分割
+	\item 冲突域，MAC层，争用信道则有冲突，路由器、交换机分割
+	\item 路由表的格式
+	\item 直接广播地址要知道网络号+主机号全1，本地广播地址32bit都是1
+	\item ARP响应是单播
+	\item TCP/IP报文头的字段的单位，IP首部长度32位为单位，总长度字节为单位，片移位8字节为单位，TCP序号字节单位
+\end{itemize}
+
+\section{TCP}
+\begin{itemize}
+	\item 握手与挥手
+
+	\item 拥堵窗口算法：三个重复报文就是避免拥堵，减到一半，超时就是慢开始，减到0
+\end{itemize}
+
+\end{document}

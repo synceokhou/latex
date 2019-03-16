@@ -1,0 +1,208 @@
+\begin{itemize}
+\item 设$A$是方阵，$A^2+A-3I=0$
+\begin{description}
+\item[(1)] 证明$A-2I$可逆
+\item[(2)] 求满足$AX+3(A-2I)^{-1}A=5X+8I$的方阵$X$
+\item[证(1)] 由
+\[
+(A-2I)\frac{A+3I}{-3}=I
+\]
+\item[证(2)] 同上$A-5I$可逆
+\[
+(A-5I)X=(A+3I)A+8I
+\]
+\end{description}
+
+\item 已知方程组
+\[
+\begin{cases}
+x_1 + x_2+ax_3+x_4=1\\
+-x_1 + x_2-x_3+bx_4=2\\
+2x_1 + x_2+x_3+x_4=c
+\end{cases}
+\begin{cases}
+x_1 +x_4=-1\\
+x_2 - 2x_4=d\\
+x_3+x_4=e
+\end{cases}
+\]
+同解，求$a,b,c,d,e$
+\begin{description}
+\item[解] 非齐次方程组的解是对应齐次方程组的解空间的商空间，所以商空间相同，则证明特解相同，并且对应齐次方程组的解空间也相同。于是分两步，拿出两个齐次方程组，把系数矩阵弄相等可求$a,b$，这一步还要记住拓展矩阵的变化。第二步拓展矩阵也相同可求出$c,d,e$
+\end{description}
+
+\item $A$为$n$阶矩阵，且$A^k=0$，证明
+\begin{description}
+\item[(1)] 矩阵
+\[
+I+A+\frac{A^2}{2!}+\cdots+\frac{A^{k-1}}{(k-1)!}
+\]可逆
+\item[(2)] 矩阵$I+A$与
+\[
+I+A+\frac{A^2}{2!}+\cdots+\frac{A^{k-1}}{(k-1)!}
+\]
+相似
+\item[证(1)] $A$是幂零矩阵，$A$的零化多项式$x^k=0$包含了特征多项式所有的根，也就是说幂零矩阵的特征值都为0，此时$\exists P,P^{-1}AP=J(0)$，或者多个若当块。然后给那个矩阵左乘右乘
+\item[证(2)] 我们可以按(1)把它变成上三角之后，用行列式因子吗
+\end{description}
+
+\item 设$A,B:V \to V$为线性变换，$A$可逆，$B$幂零（$\exists k \in \mathbf{N}^+$使得$B^k=0$），且$AB=BA$。证明$A-B$的核空间$\ker(A-B)$等于零空间
+\begin{description}
+\item[证] $A,B$可以用同一个$P$上三角化，于是在$V$中可以找到一组基使得$A,B$的矩阵都是上三角
+\item[另证] $\forall x\in \ker(A-B),Ax=Bx$，两边用$B^{k-1}$作用$B^{k-1}Ax=AB^{k}x=0$，显然$B^{k-1}$和$A$都不为零，只能$x=0$
+\end{description}
+
+\item 对常微分系统
+\[
+\frac{\ud Z}{\ud t}=J^{-1}\nabla H(Z),
+J=\left(
+\begin{array}{cc}
+O_n & I_n \\
+-I_n & O_n \\
+\end{array}
+\right),
+Z=(z_1,\cdots,z_{2n})^T\in \mathbf{R}^{2n}
+\]
+其中$\nabla H =(\frac{\partial H}{\partial z_1},\cdots,\frac{\partial H}{\partial z_{2n}})^T$，证明
+\begin{description}
+\item[(1)] $J^{-1}=J^T=-J$
+\item[(2)] 系统的相流$\{g^t:\mathbf{R}^{2n} \to \mathbf{R}^{2n}|t \in \mathbf{R}\}$总是满足
+\[
+\left[\frac{\partial g^t(Z)}{\partial Z}\right]^T J \left[\frac{\partial g^t(Z)}{\partial Z}\right] = J
+\]
+系统的相流是指任意给定一个$Z$，$g^t(Z)$是系统的解
+\[
+\frac{\ud g^t(Z)}{\ud t}=J^{-1}\nabla H(g^t(Z))
+\]
+\item[(3)] 证明更一般的结论，若$J^{-1}$变为$K^{-1}(Z)$，其中$K(Z)=(k_{ab})\in \mathbf{R^{2n\times 2n}}$反对称，可逆且满足恒等式$\frac{\partial k_{ab}}{\partial z_c}+\frac{\partial k_{bc}}{\partial z_a}+\frac{\partial k_{ca}}{\partial z_b}=0,1\leq a,b,c\leq 2n$，则系统的相流满足
+\[
+\left[\frac{\partial g^t(Z)}{\partial Z}\right]^T K(g^t(Z)) \left[\frac{\partial g^t(Z)}{\partial Z}\right] = K(Z)
+\]
+这更一般的情况下系统的相流是指任意给定一个$Z$，$g^t(Z)$是系统的解
+\[
+\frac{\ud g^t(Z)}{\ud t}=K^{-1}(Z)\nabla H(g^t(Z))
+\]
+\end{description}
+
+\item 设$A$是$n \times n$正定实对称矩阵，$y\in \mathbf{R}^n$，且$y\neq 0$，证明
+\[
+\lim_{m \to \infty}\frac{y^TA^{m+1}y}{y^TA^my}
+\]
+存在且等于$A$的一个特征值
+\begin{description}
+\item[证] $\exists P,A=P^{-1}BP$，其中
+\[
+A=\left(
+\begin{array}{cccc}
+\lambda_1 & 0 & \cdots & 0 \\
+0 & \lambda_2 & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & \lambda_n\\
+\end{array}
+\right)
+\]
+且$0<\lambda_1\leq \lambda_2 \leq \cdots \leq \lambda_n$为$A$的特征值
+\begin{eqnarray*}
+\lim_{m \to \infty}\frac{y^TA^{m+1}y}{y^TA^my} & =& \lim_{m \to \infty}\frac{y^TB^{m+1}y}{y^TA^my}\\
+& =& \lim_{m \to \infty}\frac{\sum_{k=1}^n \lambda_k^{m+1}y_k^2}{\sum_{k=1}^n \lambda_k^{m}y_k^2}\\
+& =& \lambda_j \lim_{m \to \infty}\frac{\sum_{k=1}^{j-1} (\frac{\lambda_k}{\lambda_j})^{m+1}y_k^2+y_j^2}{(\frac{\lambda_k}{\lambda_j})^my_k^2+y_j^2}\\
+\end{eqnarray*}
+其中$j=\max\{k|y_k\neq 0\}$
+\end{description}
+
+\item 设
+\[
+A=\left(
+\begin{array}{cc}
+0 & -1 \\
+1 & 0\\
+\end{array}
+\right)
+\]
+为线性变换$\mathcal{A}$在一组基下的矩阵表示
+\begin{description}
+\item[(1)] 求$\mathcal{A}$的不变子空间
+\item[(2)] 设$\mathbf{R}^n$上的线性变换$\mathcal{A}$在基$\alpha_1,\cdots,\alpha_n$下的方阵表示为对角型，且对角线上元素互异，问$\mathcal{A}$的所有不变子空间共有多少个
+\item[解(1)]
+\[
+\begin{cases}
+A\alpha_1 = \alpha_1 +\alpha_2\\
+A\alpha_2 = -\alpha_1
+\end{cases}
+\]
+若子空间维数为1，则只能是$\{\alpha_1\}$或者$\{\alpha_2\}$，显然不可能
+\end{description}
+
+
+\item 令$A$与$B$是两个$n \times n$实矩阵，假定存在一$n \times n$可逆复矩阵$U$使得$A=UBU^{-1}$，证明
+存在一$n \times n$可逆实矩阵$V$使得$A=VBV^{-1}$（即证两个实矩阵在$\mathbf{C}$上相似，则它们在$\mathbf{R}$上相似）
+\begin{description}
+\item[证] 好面熟，找到$A(M+iN)=(M+iN)B$之后，再找$x\in \mathbf{R},|M+iN|\neq 0$
+\end{description}
+
+\item 证明
+\begin{description}
+\item[(1)] 如果$\sum_{i=1}^n\sum_{j=1}^n a_{ij}x_ix_j(a_{ij}=a_{ji})$是正定二次型，证
+\[
+f(y_1,y_2,\cdots,y_n)=\left[
+\begin{array}{ccccc}
+a_{11} & a_{12} & \cdots & a_{1n} & y_1\\
+a_{21} & a_{22} & \cdots & a_{2n} & y_2\\
+\vdots & \vdots & \ddots & \vdots & \vdots\\
+a_{n1} & a_{n2} & \cdots & a_{nn} & y_n\\
+y_1 & y_2 & \cdots & y_n & 0\\
+\end{array}
+\right]
+\]
+是负定二次型
+\item[(2)] 证$f(y_1,y_2,\cdots,y_n)$的表示矩阵是$A$的负伴随矩阵$-A^*$
+\item[(3)] 如果$A$是对称正定矩阵，那么其行列式满足$|A|\leq a_{11}a_{22}\cdots a_{nn}$
+\item[(4)] 如果$A=(a_{ij})$仅仅是$n$阶实可逆方阵，那么其行列式$|A|$满足$|A|^2\leq \prod_{i=1}^n(a_{1i}^2+\cdots+a_{ni}^2)$
+\item[证(1)] 打洞
+\[
+\left[
+\begin{array}{cc}
+A & Y\\
+Y^T & 0\\
+\end{array}
+\right] \Rightarrow \left[
+\begin{array}{cc}
+A & 0\\
+0 & Y^T(-A^{-1}Y)\\
+\end{array}
+\right]
+\]
+所以重点在$A^{-1}$，若$P^{-1}AP=\diag\{\lambda_1,\cdots,\lambda_n\}$，两边移位有$\diag\{\lambda_1^{-1},\cdots,\lambda_n^{-1}\}=PA^{-1}P^{-1}$，然后令$PY=Z$的代换，就能变成负定二次型
+\item[证(2)] (1)的代换之前把$|A|$丢进中间
+\item[证(3)] 面熟，归纳法把行向量史密斯正交化
+\item[证(4)] 令$B=AA^T$，这时$B$是对称正定阵，能用(3)
+\end{description}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{itemize}

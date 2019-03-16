@@ -1,0 +1,166 @@
+\section{2007数分}
+\begin{enumerate}
+\item 求$\lim_{x \to +\infty}x[e-(1+\frac{1}{x})^x]$
+\begin{description}
+\item[解] 用$y=\frac{1}{x}$代入，具体见吉米多维奇数学分析习题集题解2P127[1359]
+\end{description}
+
+\item 设$f(x)=\arctan x -\frac{\sqrt{3}}{4}\ln x$，求
+\begin{description}
+\item[(1)] $f'(x)$
+\item[(2)] $f(x)$在区间$[0.01,100]$上的最小值
+\item[解]
+\begin{eqnarray*}
+f'(x) & = & \frac{1}{1+x^2}-\frac{\sqrt{2}}{4x}\\
+& = & - \frac{\sqrt{3}(x-\frac{\sqrt{3}}{3})(x-\sqrt{3})}{4x(1+x^2)}
+\end{eqnarray*}
+然后画图，知道$f(\frac{\sqrt{3}}{3})$是极小值点，和$f(100)$比最小值
+\end{description}
+
+\item 求
+\[
+\lim_{n \to \infty}\frac{1}{n}(1+e^{\sqrt{\frac{1}{n}}}+e^{\sqrt{\frac{2}{n}}}+\cdots +e^{\sqrt{\frac{n-1}{n}}} +e)
+\]
+\begin{description}
+\item[解]
+\begin{eqnarray*}
+& = & \lim_{n \to \infty}\frac{1}{n}(e^{\sqrt{\frac{1}{n}}}+e^{\sqrt{\frac{2}{n}}}+\cdots +e^{\sqrt{\frac{n-1}{n}}} +e)\\
+& = & \int_0^1 e^{\sqrt{x}}\ud x \\
+& = & 2 \int_0^1 te^t \ud t \\
+& = & 2
+\end{eqnarray*}
+\end{description}
+
+
+\item 设$0<x<1$，证明$(1+x)\ln^2(1+x)<x^2$
+\begin{description}
+\item[证] 由Cauchy中值定理
+\[
+\frac{\ln(1+x)}{\frac{x}{(1+x)^\frac{1}{2}}}=\frac{\frac{1}{1+\xi}}{\frac{2+\xi}{2(1+\xi)^{\frac{3}{2}}}} = \frac{(1+\xi)^\frac{1}{2}}{1+\frac{\xi}{2}} = \left( \frac{1+\xi}{1+\xi+\frac{\xi^2}{4}}\right)^{\frac{1}{2}} < 1
+\]
+\end{description}
+
+\item 求
+\[
+\int_0^{\frac{\pi}{2}} \frac{\cos^2x}{\sin x+\cos x}\ud x
+\]
+\begin{description}
+\item[解] 首先想到代换$t=\frac{\pi}{2}-x$
+\begin{eqnarray*}
+& = & \frac{1}{2}\int_0^{\frac{\pi}{2}} \frac{1}{\sqrt{2}\cos(x-\frac{\pi}{4})}\ud x\\
+& = & \frac{\sqrt{2}}{2} \int_0^{\frac{\pi}{4}} \frac{\sec x(\sec x+\tan x)}{\sec x+\tan x} \ud x \\
+& = & \frac{\sqrt{2}}{2} \ln(\sqrt{2}+1)
+\end{eqnarray*}
+\end{description}
+
+\item 求星形线$x^{\frac{2}{3}}+y^{\frac{2}{3}}=a^{\frac{2}{3}}(a>0)$的切线与两条坐标轴围成的三角面积的最大值
+\begin{description}
+\item[解] 在$(x_0,y_0)$处切线方程$y-y_0=-(\frac{y_0}{x_0})^\frac{1}{3}(x-x_0)$
+\begin{eqnarray*}
+S & = & \frac{1}{2} x_0^{\frac{1}{3}}|y_0^\frac{2}{3}+x_0^\frac{2}{3}| y_0^{\frac{1}{3}}|y_0^\frac{2}{3}+x_0^\frac{2}{3}| \\
+& = & \frac{1}{2} a^{\frac{4}{3}}x_0^{\frac{1}{3}}y_0^{\frac{1}{3}}\\
+& \leq & \frac{1}{2} a^{\frac{4}{3}}\frac{x_0^{\frac{1}{3}}+y_0^{\frac{1}{3}}}{2}
+\end{eqnarray*}
+\end{description}
+
+\item 设地球的半径为$R$，距离地球中心$r(r\geq R)$处空气密度为
+\[
+\rho(r)=\rho_0e^{k(1-\frac{r}{R})},(\rho,k\in \mathbf{R}^+)
+\]
+求地球上空气总质量
+\begin{description}
+\item[解]
+\begin{eqnarray*}
+M & = & \int_0^\infty \rho_0 e^{k(1-\frac{r}{R})}4\pi r^2 \ud r \\
+& = & 4\pi R^3\rho_0\frac{k^2+2k+2}{k^3}
+\end{eqnarray*}
+\end{description}
+
+\item 设函数$f(x)$在$G=(-\infty,+\infty)$内二阶可导，记$M_k=\sup_{x\in G}|f^{(k)}(x)|(k=0,1,2)$如果$M_0,M_2$均有限，且$M_2>0$，证明$M_1\leq \sqrt{2M_0M_2}$
+\begin{description}
+\item[证]
+\begin{eqnarray*}
+f(x+h) = f(x)+f'(x)h+\frac{f''(\xi)}{2}h^2 \\
+f(x-h) = f(x)-f'(x)h+\frac{f''(\eta)}{2}h^2 \\
+f(x+h) - f(x-h) = 2f'(x)h+\frac{h^2}{2}[f''(\xi)-f''(\eta)] \\
+|f'(x)| = \left|\frac{f(x+h)-f(x-h)}{2h}-\frac{h}{4}[f''(\xi)-f''(\eta)]\right| \leq \frac{M_0}{h}+\frac{M_2}{2}h
+\end{eqnarray*}
+\end{description}
+
+\item 设$\{\psi_k\}$与$\{\delta_k\}$为两个无穷非负实数列，满足$\psi_{k+1}\leq(1+\delta_k)\psi_k+\delta_k(k\geq 1)$，并且$\sum_{k=1}^{\infty}\delta_k\leq+\infty$，证明
+\begin{description}
+\item[(1)] 数列$\{\prod_{j=1}^k(1+\delta_j)\}$收敛
+\item[(2)] 数列$\{\psi_k\}$有界
+\item[(3)] 数列$\{\psi_k\}$收敛
+\item[证(1)] $\sum_{k=1}^{\infty}\delta_k $收敛$\Rightarrow \sum_{k=1}^{\infty}\ln(1+\delta_k)$收敛（比值判别法）$\Rightarrow \left\{ \ln \left[\prod_{j=1}^k(1+\delta_j)\right]\right\}$收敛（部分和）$\Rightarrow \left\{\prod_{j=1}^k(1+\delta_j)\right\}$收敛（$e^x$连续）
+\item[证(2)] $1\leq \psi_{k+1}+1\leq (1+\delta_k)(1+\psi_k+1)$
+\item[证(3)] 由$\{\psi_k\}$有界$M$
+\[
+\psi_{k+1}-\psi_k\leq \delta_k(\psi_k+1)\leq M \delta_k
+\]
+及$\sum_{k=1}^\infty \delta_k$收敛知$\forall \epsilon >0,\exists K>0,\st$
+\[
+\psi_{k+l}-\psi_{k}=\sum_{j=k}^{k+l-1}(\psi_{j+1}-\psi_j)\leq M\sum_{j=k}^{k+l-1}\delta_j<\frac{\epsilon}{2}(k\geq K)
+\]
+由$\{\psi_k\}$有界及Weierstrass聚点定理，$\exists \{k_j\},\psi,\st \psi_{k_j}\rightarrow\psi$，而
+\[
+\exists J>K,\st j\geq J \Rightarrow|\psi_{k_j}-\psi|<\frac{\epsilon}{2}
+\]
+综上，$\forall \epsilon>0,\exists K_J, \st k\geq K_J,\exists j(k)\geq J,\st k_{j(k)}\leq k<k_{j(k)+1}$，而
+\begin{eqnarray*}
+\psi_k &= &\psi_k - \psi_{k_{j(k)}}+\psi_{k_{j(k)}}\\
+&\leq& \frac{\epsilon}{2}+(\psi+\frac{\epsilon}{2})(k_{j(k)}\geq j(k)\geq J\geq K)\\
+&=&\psi+\epsilon
+\end{eqnarray*}
+又
+\begin{eqnarray*}
+\psi_k &= &\psi_{k_{j(k)+1}}-(\psi_{k_{j(k)+1}}-\psi_k )\\
+&\geq& (\psi-\frac{\epsilon}{2})-\frac{\epsilon}{2} (j(k)+1> J,k\geq k_{j(k)} \geq K)\\
+&=&\psi-\epsilon
+\end{eqnarray*}
+\end{description}
+
+\item 设$f(x)$是是实轴上的可微函数，$\forall x,y \in \mathbf{R}$满足
+\[
+f(x+y)=\frac{f(x)+f(y)}{1+f(x)f(y)}
+\]
+并且$f'(0)=1$，求$f(x)$的表达式
+\begin{description}
+\item[证] 令$x=0$
+\[
+f(y)=\frac{f(0)+f(y)}{1+f(0)f(y)}
+\]
+$f(0)[f^2(y)-1]=0(\forall y \in \mathbf{R})$，因$f'(0)=1$，而$f(0)=0$。再对原式两边对$y$求导
+\[
+f'(x+y)=\frac{f'(y)[1+f(x)f(y)]-[f(x)+f(y)]f(x)f'(y)}{[1+f(x)f(y)]^2}
+\]
+令$y=0$，有
+\begin{eqnarray*}
+f'(x)=1-f^2(x)\\
+\left[\frac{1}{f(x)-1} -\frac{1}{f(x)+1} \right]\ud f(x)=-2\ud x\\
+\ln|\frac{f(x)-1}{f(x)+1}|=-2x+C_1\\
+\frac{f(x)-1}{f(x)+1} = Ce^{-2x}(C=e^{C_1})
+\end{eqnarray*}
+因$f(0)=0$，而$C=-1$，于是
+\[
+\frac{f(x)-1}{f(x)+1} = -e^{-2x} \Rightarrow f(x)=\frac{1-e^{-2x}}{1+e^{-2x}}=\tanh x
+\]
+\end{description}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}

@@ -1,0 +1,120 @@
+\section{2014数分}
+\begin{enumerate}
+\item 求极限
+\[
+\lim_{n \to \infty} \left( \frac{\sin \frac{\pi}{n}}{n+1} + \cdots + \frac{\sin\pi}{n+\frac{1}{n}}\right)
+\]
+\begin{description}
+\item[解] 见吉米多维奇数学分析习题集题解三[2230]，见数学分析中的典型问题和方法P57
+\[
+\frac{1}{n+1} \sum_{i=1}^n \sin\frac{i}{n}\pi \leq \sum_{i=1}^n \frac{\sin\frac{i}{n}\pi}{n+\frac{i}{n}} \leq \frac{1}{n+\frac{1}{n}} \sum_{i=1}^n \sin\frac{i}{n}\pi
+\]
+左边
+\[
+\lim_{n\to \infty} \frac{n}{(n+1)\pi} \frac{\pi}{n}\sum_{i=1}^n\sin\frac{i}{n}\pi = \frac{1}{\pi}\int_0^\pi \sin x\ud x = \frac{2}{\pi}
+\]
+右边
+\[
+\lim_{n\to \infty} \frac{1}{(1+\frac{1}{n^2})\pi} \frac{\pi}{n}\sum_{i=1}^n\sin\frac{i}{n}\pi = \frac{1}{\pi}\int_0^\pi \sin x\ud x = \frac{2}{\pi}
+\]
+\end{description}
+
+\item $f(x)=(1+x)^{\frac{1}{x}}$，求$f'(0),f''(0),f'''(0)$
+\begin{description}
+\item[解]
+\begin{eqnarray*}
+\ln f(x)&=&\frac{\ln(1+x)}{x}\\
+\frac{f'(x)}{f(x)}&=&\frac{\frac{1}{1+x}x-\ln(1+x)}{x^2}\\
+&=&\frac{x-(1+x)\ln(1+x)}{(1+x)x^2}
+\end{eqnarray*}
+\end{description}
+
+\item $\psi(y)$是$f(x)$的反函数，求用$f',f'',f'''$表示$\psi',\psi'',\psi'''$
+\begin{description}
+\item[解] 令$y=f(x),x=\psi(y)$，则有
+\begin{eqnarray*}
+f'(x) &=& \frac{\ud y}{\ud x}\\
+\psi'(y) &=& \frac{\ud x}{\ud y} = \frac{1}{f'(x)}\\
+\psi''(y) &=& \frac{\ud^2x}{\ud y^2} \\
+&=& \frac{\ud (\frac{\ud x}{\ud y})}{\ud y}\\
+&=& \frac{\ud (\frac{\ud x}{\ud y})}{\ud x} \frac{\ud x}{\ud y}\\
+&=& \frac{-f''(x)}{(f'(x))^2} \frac{1}{f'(x)}\\
+\psi'''(y) &=& \frac{\ud (\frac{\ud^2x}{\ud y^2})}{\ud y}\\
+&=& \frac{\ud (\frac{\ud^2x}{\ud y^2})}{\ud x} \frac{\ud x}{\ud y}
+\end{eqnarray*}
+\end{description}
+
+\item $f$在$[0,1]$上连续，$(0,1)$上可导，$f(0)=0,f(1)=\frac{1}{2}$，求证$\exists \xi,\eta \in (0,1),f'(\xi)+f'(\eta)=\xi+\eta$
+\begin{description}
+\item[证] 由$f'(\xi)-\xi$的格式可以猜中值定理的原式的样子$g(x)=f(x)-\frac{x^2}{2}$，再看有左右两边，可以$h(x)=g(x)-g(1-x)$，再用两端点做中值，$h(0)=h(1)=0$，故$\exists \xi \in (0,1),\st h'(\xi)=0$
+\end{description}
+
+\item $a_0 > 0,a_n=\sqrt{a_{n-1}+6}$，求极限
+\begin{description}
+\item[证] 见南开大学数分一P41，先$a_n-a_{n-1}$，判断单调性，然后放缩可得不等式解出$a_n$的界，然后在等式两端取极限。另解
+\begin{eqnarray*}
+a_n-a_{n-1} &=& \sqrt{a_{n-1}+6} - \sqrt{a_{n-2}+6}\\
+&=& \frac{a_{n-1}+6-(a_{n-2}+6)}{\sqrt{a_{n-1}+6} + \sqrt{a_{n-2}+6}}
+\end{eqnarray*}
+可以看出分母是大于1的，于是$a_n$之间的距离是不断缩小的。
+\end{description}
+
+\item $1\leq \iint_\omega \sin x^2+\cos y^2 \ud x \ud y\leq \sqrt{2}$，其中$\omega$为$\{0\leq x\leq 1,0\leq y\leq 1\}$
+\begin{description}
+\item[证] 令原式的值为$I$
+\begin{eqnarray*}
+I & = & \iint_\omega \sin x^2 \ud x \ud y+\iint_\omega \cos y^2 \ud x \ud y\\
+& = & \int_0^1 \sin x^2 \ud x + \int_0^1 \cos y^2 \ud y\\
+& = & \int_0^1 \sin x^2 \ud x + \int_0^1 \cos x^2 \ud x\\
+& = & \int_0^1 (\sin x^2 + \cos x^2) \ud x\\
+& = & \int_0^1 \sqrt{2}\sin (x^2+\frac{\pi}{4}) \ud x
+\end{eqnarray*}
+又因为$x^2+\frac{\pi}{4}$能取到$\frac{\pi}{4}$和$\frac{\pi}{2}$
+\end{description}
+
+\item 求$z=x+y$与$z=x^2+y^2$围成的面积
+\begin{description}
+\item[解] $z_1-z_2$然后积平面
+\end{description}
+
+\item 讨论
+\[
+\sum_{n=0}^{\infty} \frac{(x^2+x+1)^n}{n(n+1)}
+\]
+收敛性与一致收敛性
+
+\item $u(x)$为在$[0,1]$上连续，$u'(x)$绝对可积，求证
+\[
+\sup_{x\in [0,1]} |u(x)| \leq \int_0^1 |u(x)|\ud x+\int_0^1 |u'(x)|\ud x
+\]
+$u(x,y)$在$\Omega = \{0\leq x\leq 1,0\leq y\leq 1\}$上连续，$\frac{\partial u}{\partial x},\frac{\partial u}{\partial y},\frac{\partial^2 u}{\partial x\partial y}$绝对可积，求证
+\[
+\sup_{(x,y)\in \Omega} |u|\leq\iint_\Omega |u|\ud x\ud y+\iint_\Omega\left( \left|\frac{\partial u}{\partial x}\right|+\left|\frac{\partial u}{\partial y}\right|\right)\ud x\ud y+\iint_\Omega\left|\frac{\partial^2 u}{\partial x\partial y}\right|\ud x\ud y
+\]
+\begin{description}
+\item[证(1)] 见数学分析精选习题全解上P263的263，另见数学分析中的典型问题和方法P359。$\exists \xi,x_0\in[0,1],\st$
+\[
+|f(\xi)| = \left|\int_0^1 f(x)\ud x \right|
+\]
+于是
+\[
+\sup_{x\in [0,1]}|f(x)| = |f(x_0)| = \left|\int_\xi^{x_0} f'(t)\ud t +f(\xi)\right|
+\]
+\item[证(2)] 按照上面看来，要二元的中值定理
+\end{description}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}

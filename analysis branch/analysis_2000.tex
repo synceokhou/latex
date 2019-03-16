@@ -1,0 +1,93 @@
+\section{2000数分}
+\begin{enumerate}
+
+\item 定义函数
+\[
+f(x,y)=\begin{cases}
+\frac{x^3}{x^2+y^2} & x^2+y^2>0 \\
+0 & x=y=0
+\end{cases}
+\]
+证明函数$f(x,y)$在$(0,0)$处连续但是不可微
+
+\item 设$f_n(x)=x^n\ln x,n\in \mathbf{N}^+$
+\begin{description}
+\item[(1)] 证明
+\[
+\frac{f_n^{(n)}(x)}{n!} = \frac{f_{n-1}^{(n-1)}(x)}{(n-1)!}+\frac{1}{n},n=1,2,\cdots
+\]
+\item[(2)] 计算极限
+\[
+\lim_{n \to \infty} \frac{f_n^{(n)}(\frac{1}{n})}{n!}
+\]
+\end{description}
+
+\item 在$\mathbf{R}^3$中，由$y=1,y=-x,x=0,z=0,z=-x$围成的闭区域记为$D$，计算$I=\iiint_D e^{x+y+z}\ud x\ud y\ud z$
+
+\item 定义向量场
+\[
+\overrightarrow{F}(x,y)=\left(\frac{xe^{\sqrt{x^2+y^2}}}{\sqrt{x^2+y^2}},\frac{ye^{\sqrt{x^2+y^2}}}{\sqrt{x^2+y^2}} \right),x^2+y^2>0
+\]
+证明$\overrightarrow{F}(x,y)$是有势场，并求出$\overrightarrow{F}(x,y)$的一个势函数
+
+\item 设
+\[
+f(x) = \sum_{n=0}^{\infty}\frac{1}{x+2^n},x\in[0,+\infty)
+\]
+证
+\begin{description}
+\item[(1)] $f(x)$在$[0,+\infty)$上连续
+\item[(2)] $\lim_{x \to \infty}f(x)=0$
+\item[(3)] $\forall x\in (0,+\infty)$有$0<f(x)-\frac{\ln(1+x)}{x\ln 2}<\frac{1}{1+x}$
+\item[证(1)] 见南开大学数分下P135，$f(x)$在$[0,+\infty)$一致收敛，每一项又连续
+\item[证(2)] 既然$\lim_{x \to \infty}$并且$\sum_{n=0}^{\infty}$，有很多个无穷，我们想方法把$n>N$之后的$\lim_{x \to \infty}$放缩放掉就好了
+\item[证(3)] 整个时候要观察$\frac{\ln(1+x)}{x\ln 2}$和$\frac{1}{x+2^n}$的关系
+\[
+\int_0^\infty\frac{1}{x+2^y}\ud y = \frac{\ln(1+x)}{x\ln 2}
+\]
+于是，可以令
+\[
+I_n(x)=\int_n^{n+1} \frac{1}{x+2^y}\ud y,\frac{1}{x+2^{n+1}}<I_n(x)<\frac{1}{x+2^{n}}
+\]
+这个两边的不等式拆开，然后分别求和
+\[
+f(x)<\frac{1}{1+x}+\sum_{n=0}^\infty I_n(x)
+\]
+请考虑为何上式比下式多$\frac{1}{1+x}$
+\[
+f(x)>\sum_{n=0}^\infty I_n(x)
+\]
+\end{description}
+
+\item 设$f(x)$在$[-a,a]$上有连续的导数，证
+\[
+\lim_{\lambda \to \infty}\int_{-a}^a \frac{1-\cos\lambda x}{x}f(x)\ud x=\int_0^a\frac{f(x)-f(-x)}{x}\ud x
+\]
+\begin{description}
+\item[证] 首先可以拆开然后对称性变量代换
+\[
+=\int_0^a\frac{f(x)-f(-x)}{x}\ud x-\int_0^a\frac{f(x)-f(-x)}{x}\cos\lambda x\ud x
+\]
+后者$\frac{f(x)-f(-x)}{x}$是连续函数，由黎曼引理
+\[
+\lim_{\lambda\to\infty}2\int_0^a\frac{f(x)-f(-x)}{2x}\cos\lambda x\ud x=0
+\]
+\end{description}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+\end{enumerate}

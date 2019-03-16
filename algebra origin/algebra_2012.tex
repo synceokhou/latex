@@ -1,0 +1,164 @@
+\section{2012高代}
+\begin{enumerate}
+\item 证明多项式$f(x) = 1+ \frac{x^1}{1!}+ \frac{x^2}{2!}+ \dots+ \frac{x^n}{n!}$没有重根
+\begin{description}
+\item[证] 不妨设$f(x) = (x-\xi)^kg(x)$，其中$k > 1$。则$f'(x)=k(x-\xi)^{k-1}g(x)+(x-\xi)^kg'(x)$。因为$(x-\xi)|f(x),(x-\xi)|f'(x)$，则$(x-\xi)|(f(x)-f'(x))$。但是显然$(x-\xi)|\frac{x^n}{n!}$时，$\xi=0$，回到$f(x)$，$\xi \neq 0$
+\end{description}
+
+
+\item 设$g(x) = p^k(x)g_1(x),(k>1)$，其中$(p(x),g_1(x))=1$。证明对任意多项式$f(x)$有
+\[
+\frac{f(x)}{g(x)} = \frac{r(x)}{p^k(x)} + \frac{f_1(x)}{p^{k-1}(x)g_1(x)}
+\]
+其中$r(x),f_1(x)$都是多项式，$r(x)=0$或deg$(r(x))<$deg$(p(x))$
+\begin{description}
+\item[证] 既要证$f(x)=r(x)g_1(x)+p(x)f_1(x)$。因为$(p(x),g_1(x))=1$，所以存在$u(x)p(x)+v(x)g_1(x)=1$，即$f(x)=u(x)p(x)f(x)+v(x)g_1(x)f(x)$。若deg$(v(x)f(x))<$ deg$(p(x))$，可直接令$r(x)=v(x)f(x),f_1(x)=u(x)f(x)$。若deg$(v(x)f(x))\geq$ deg$(p(x))$，令$v_1(x)=v(x)f(x),v_1(x)=v_2(x)p(x)+r_1(x)$，代入原式，得$f(x)=u(x)p(x)f(x)+g_1(x)[v_2(x)p(x)+r_1(x)]=[u(x)f(x)+g_1(x)v_2]p(x)+g_1(x)r_1(x)$，令$f_1(x)=u(x)f(x)+g_1(x)v_2,r(x)=r_1(x)$
+\end{description}
+
+\item 已知$n$阶方阵
+\[
+A = \left(
+\begin{array}{cccc}
+a_1^2 &a_1a_2+1 & \cdots &a_1a_n+1 \\
+a_2a_1+1 &a_2^2 & \cdots &a_2a_n+1 \\
+\vdots &\vdots & \ddots &\vdots \\
+a_na_1+1 &a_na_2+1 & \cdots &a_n^2 \\
+\end{array}\right)
+\]
+其中$\sum_{i=1}^na_i=1,\sum_{i=1}^na_i^2=1,$
+\begin{description}
+\item[(1)] 求$A$的全部特征值
+\item[(2)] 求$A$的行列式$\det(A)$和迹$\tr(A)$
+\item[证(1)]
+\[
+A=\left(
+\begin{array}{cc}
+a_1 & 1\\
+a_2 & 1\\
+\vdots & \vdots \\
+a_n & 1\\
+\end{array}\right)
+\left(
+\begin{array}{cccc}
+a_1 & a_2 & \cdots & a_n \\
+1 & 1 & \cdots & 1 \\
+\end{array}\right)-E
+\]
+\end{description}
+
+\item 设数域$\mathbf{K}$上的$n$阶方阵$A$满足$A^2=A$，$V_1,V_2$分别是齐次线性方程组$Ax=0$和$(A-I_n)x=0$在$\mathbf{K}^n$中的解空间，证明$\mathbf{K}^n=V_1\oplus V_2$
+\begin{description}
+\item[证] 首先$V_1+V_2$是线性子空间。然后证$V_1\cap V_2 = \mathbf{0}$。最后用维数公式。
+$\dim V_1+\dim V_2=\dim(V_1+V_2)+\dim(V_1 \cap V_2),\dim(V_1 \cap V_2)=0,\dim(V_1+V_2)=\dim(V_1\oplus V_2)\leq n$。只需证$\dim V_1+\dim V_2\geq 0$。又$\dim V_1=n-\rank(A),\dim V_2=n-\rank(A-I_n)$。而$\rank(A-I_n)+\rank(A)=\rank(I_n-A)+\rank(A) \geq \rank(I_n-A+A)=n$
+
+\end{description}
+
+\item 设$n$阶矩阵$A$可逆，$\alpha,\beta$均为$n$维列向量，且$1+\beta^TA^{-1}\alpha\neq 0$
+\begin{description}
+\item[(1)] 证明矩阵
+\[
+P=\left(
+\begin{array}{cc}
+A & \alpha\\
+-\beta^T & 1\\
+\end{array}\right)
+\]
+可逆，并求其逆矩阵
+\item[(2)] 证明矩阵$Q=A+\alpha\beta^T$可逆，并求其逆矩阵
+\item[证(1)] $P$左乘$P_1$
+\[
+\left(
+\begin{array}{cc}
+I_n & O \\
+\beta^TA^{-1} & 1 \\
+\end{array}\right)P = \left(
+\begin{array}{cc}
+A & \alpha \\
+0 & 1+\beta^TA^{-1}\alpha \\
+\end{array}\right)
+\]
+\item[证(2)] $P$左乘$P_2$
+\[
+\left(
+\begin{array}{cc}
+I_n & -\alpha \\
+0 & 1 \\
+\end{array}\right)P = \left(
+\begin{array}{cc}
+A+\alpha\beta^T & 0 \\
+-\beta^T & 1 \\
+\end{array}\right)
+\]
+因为$P_2P$可逆，若$Q$不可逆，$\rank(Q\quad\mathbf{0})<n-1$，与$P_2P$可逆矛盾
+\end{description}
+
+\item 证明任何复数方阵$A$都与它的转置矩阵$A^T$相似
+\begin{description}
+\item[证] 见高等代数下P343。转置不改变$\lambda-$矩阵的行列式因子的值。由定理4可证
+\end{description}
+
+\item 在二阶实数矩阵构成的线性空间$\mathbf{R}^{2\times2}$中定义$(A,B)=\tr(A^TB),\forall A,B\in \mathbf{R}^{2\times2}$
+\begin{description}
+\item[(1)] 证明$(A,B)$是线性空间$\mathbf{R}^{2\times2}$的内积
+\item[(2)] 设$\mathbf{W}$是由
+\[
+A_1=\left(
+\begin{array}{cc}
+1 & 1\\
+0 & 0\\
+\end{array}\right),
+A_2=\left(
+\begin{array}{cc}
+0 & 1\\
+0 & 0\\
+\end{array}\right)
+\]
+生成的子空间。求$\mathbf{W}^\perp$的一组标准正交基
+\item[证(1)] 内积的定义高等代数下P451，$V$上的一个正定的对称双线性函数$f$，所以要证正定、对称、双线性
+\end{description}
+
+\item 设$T_1,T_2,\dots,T_n$是数域上线性空间$V$的非零线性变换，证明存在向量$\alpha \in V$，使得$T_i(\alpha) \neq 0,i=1,2,\dots,n$
+\begin{description}
+\item[证] 没有说明$V$是否有限维。所以不能用矩阵乘法什么的来证。数学归纳法。当$n=1$时，显然成立。设$n=k-1$时成立。$n=k$时，存在$\alpha,\beta$
+\begin{eqnarray*}
+T_i(\alpha) & \neq & 0, i=1,\cdots,k-1 \\
+T_j(\beta)  & \neq & 0, j=2,\cdots,k
+\end{eqnarray*}
+若$T_n(\alpha) \neq 0$或$T_1(\beta) \neq 0$成立则得证。若$T_n(\alpha)= 0$和$T_1(\beta) = 0$，对数域$\mathbf{F}$任意非零$\lambda$
+\begin{eqnarray*}
+T_1(\alpha+ \lambda\beta) = T_1(\alpha) + \lambda T_1(\beta) = T_1(\alpha) \neq 0 \\
+T_k(\alpha+ \lambda\beta) = T_k(\alpha) + \lambda T_1(\beta) = \lambda T_1(\beta) \neq 0
+\end{eqnarray*}
+下证数域$\mathbf{F}$中存在非零$\lambda_0$，使得
+\[
+T_i(\alpha+ \lambda_0 \beta) \neq 0,i=1,\cdots,k
+\]
+若不然，则对数域$\mathbf{F}$中的每个非零$\lambda$有
+\[
+T_l(\alpha+ \lambda\beta)=0, 2\leq l \leq k-1
+\]
+由数域$\mathbf{F}$为无限集，$\lambda$可取值无穷，而线性变换有限个，由抽屉原理，必存在$\mathbf{F}$中不等非零元素$\lambda,\mu$及线性变换$T_{\nu}$
+\begin{eqnarray*}
+T_{\nu}(\alpha+ \lambda\beta)=0\\
+T_{\nu}(\alpha+ \mu\beta)=0
+\end{eqnarray*}
+得$T_{\nu}(\beta)=0$，矛盾？$T_1(\beta)=0$怎么办
+
+\item[另证] 这是看了高等代数考研攻略P19例题2之后的想法，这题翻译过来就是
+\[
+\bigcup_i \ker T_i \supsetneq V
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+\end{description}
+\end{enumerate}

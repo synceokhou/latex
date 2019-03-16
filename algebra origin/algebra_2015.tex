@@ -1,0 +1,244 @@
+\section{2015高代}
+\begin{enumerate}
+\item 设$x_1,x_2,\cdots,x_n$两两相异,$f(x) = (x-x_1)(x-x_2)\cdots(x-x_n)$
+\[
+s_k = x_1^k + x_2^k + \cdots + x_n^k
+\]
+求证：
+\begin{description}
+\item[(1)] $f'(x)^2-f(x)f''(x)$无实根
+\item[(2)] 如果
+\[
+x^{k+1}f'(x) = (s_0x^k + s_1x^{k-1} + \cdots + s_k)f(x) + g(x)
+\]
+则$g(x)$次数小于$n$
+\item[证(1)] 这是一道非常直接的题目，甚至让人错觉是数分题
+\[
+f^2(x)\left(\frac{f'(x)}{f(x)}\right)' = f'(x)^2-f(x)f''(x)
+\]
+然后
+\[
+f^2(x)\left(-\sum\frac{1}{(x-x_i)^2}\right) <0 ,\qquad \forall x \in \mathbf{R}
+\]
+\item[证(2)] 出题人应该是从某一现实计算中发现技巧然后硬生生凑出来的
+\begin{eqnarray*}
+g(x) & = & x^{k+1}f'(x)-(s_0x^k+s_1x^{k-1}+\cdots+s_k)f(x) \\
+     & = & f(x)\sum_{j=1}^k\frac{1}{x-x_j}-\sum_{l=0}^k\sum_{j=1}^nx_j^lx^{k-l}f(x) \\
+     & = & x^{k+1}f(x)\sum_{j=1}^k\frac{1}{x-x_j}-x^kf(x)\sum_{l=0}^k\sum_{j=1}^n(\frac{x_j}{x})^l \\
+     & = & f(x)\sum_{j=1}^k\frac{x^{k+1}}{x-x_j} - x^kf(x)\sum_{j=1}^n\frac{1-(\frac{x_j}{x})^{k+1}}{1-\frac{x_j}{x}} \\
+     & = & f(x)\sum_{j=1}^k\frac{x^{k+1}}{x-x_j} - f(x)\sum_{j=1}^n\frac{x^{k+1}-x^{k+1}_j}{x-x_j} \\
+     & = & f(x)\sum_{j=1}^n\frac{x^{k+1}}{x-x_j} \\
+\end{eqnarray*}
+\end{description}
+
+\item $A_n=(a^{|i-j|})_{n\times n}$，求$|A_n|$和$|A_n^*|$
+\begin{description}
+\item[解] 第$i$行$\times (-a) +$第$i+1$行，记住是从下往上逐个进行，$|A_n|=(1-a^2)^{n-1}$。当$a\neq\pm1$时，$A_n^*=|A_n|An^{-1} \Rightarrow|A_n^*| = (1-a^2)^{(n-1)^2}$。当$a =\pm1$时，$\rank(A_n)=1$，所以$A_n^*=0$
+\end{description}
+
+\item
+\[
+A=\left(
+\begin{array}{ccc}
+a & 0 & 1 \\
+-2 & 0 & 1 \\
+2 & b & -1 \\
+\end{array}
+\right),
+B=\left(
+\begin{array}{ccc}
+2 & -1 & 0 \\
+0 & 0 & c \\
+2 & b & 1 \\
+\end{array}
+\right)
+\]
+\begin{description}
+\item[(1)] $a,b,c$为何值时，$AB=BA$
+\item[(2)] $AB=BA$时，求$A,B$的公共单位特征向量
+\item[解(1)]
+\[
+AB=\left(
+\begin{array}{ccc}
+2a+2 & b-a & 1 \\
+-2 & 2+b & 1 \\
+2 & -2-b & bc-1\\
+\end{array}\right)
+,
+BA=\left(
+\begin{array}{ccc}
+2a+2 & 0 & 1 \\
+2c & bc & -c \\
+2a-2b+2 & b & 1+b\\
+\end{array}\right)
+\]
+可知$a=b=c=-1$
+\item[解(2)]
+\[
+\left(
+\begin{array}{ccc}
+-1-\lambda & 0 & 1 \\
+-2 & -\lambda & 1 \\
+2 & -1 & -1-\lambda\\
+2-\mu & -1 & 0\\
+0 & -\mu & -1\\
+2 & -1 & 1-\mu\\
+\end{array}\right)
+\left(
+\begin{array}{c}
+x\\
+y\\
+z\\
+\end{array}
+\right)=0
+\]
+其中
+\[
+\left[
+\begin{array}{cc}
+-1 & 0 \\
+-\mu & -1 \\
+\end{array}
+\right] = 1
+\]
+第二列和第三列线性无关，而前式有非零解，所以第一列可由第二列和第三列线性表出。
+\[
+\left(
+\begin{array}{c}
+x\\
+y\\
+z\\
+\end{array}
+\right) = \alpha
+\left(
+\begin{array}{c}
+1\\
+2-\mu\\
+1+\lambda\\
+\end{array}
+\right)
+\]
+代入原式解出$\mu,\lambda$，再解出向量
+\end{description}
+
+\item $A^2 = -E$，则$\rank(A+iE)$与$\rank(A-iE)$满足什么关系，并证之
+\begin{description}
+\item[证] 
+\begin{eqnarray*}
+\left(
+\begin{array}{cc}
+A-iE & \\
+ & A+iE \\
+\end{array}
+\right) & \rightarrow & \left(
+\begin{array}{cc}
+A-iE & A+iE\\
+ & A+iE \\
+\end{array}
+\right) \\
+& \rightarrow & \left(
+\begin{array}{cc}
+-2iE & A+iE\\
+-A-iE & A+iE\\
+\end{array}
+\right) \\
+& \rightarrow & \left(
+\begin{array}{cc}
+E & \frac{i}{2}A+\frac{1}{2}E\\
+-A-iE & A+iE\\
+\end{array}
+\right) \\
+& \rightarrow & \left(
+\begin{array}{cc}
+E & \frac{i}{2}A+\frac{1}{2}E\\
+0 & 0 \\
+\end{array}
+\right) \\
+\end{eqnarray*}
+最后一步很简单，最后一行$\times(A-iE)$
+\end{description}
+
+\item
+\[
+A = \left(
+\begin{array}{ccc}
+-1 & -2 & 6 \\
+-1 & 0 & 3 \\
+-1 & -1 & 4 \\
+\end{array}
+\right)
+\]
+求$A^{2015}$
+\begin{description}
+\item[解] $|\lambda E-A|=(\lambda-1)^3$，然后由高等代数下P349例1可知，主对角元为$1$的若当块总数为$3-1=2$，$A$的若当标准型$J$为
+\[
+J = \left(
+\begin{array}{ccc}
+1 & & \\
+ & 1 & 1\\
+ &  & 1 \\
+\end{array}
+\right)
+\]
+由于$P^{-1}AP=J$，因此$AP=PJ$，设$P=(X_1,X_2,X_3)$，由$A(X_1,X_2,X_3)=(X_1,X_2,X_2+X_3)$，解$(A-I)Y=0$，得
+\end{description}
+
+\item $A,B$无公共特征根，$f(\lambda)$为$A$的特征多项式。证明
+\begin{description}
+\item[(1)] $f(B)$可逆
+\item[(2)] $AX=XB$只有零解
+\item[证(1)] 设$\lambda_1,\cdots,\lambda_n$为$A$的全部复特征值，则
+\[
+f(x) = \prod_{i=1}^n(x-\lambda_i) \Rightarrow f(B) = \prod_{i=1}^n(B-\lambda_iE)
+\]
+又因为$\lambda_i$不是$B$的特征值
+\[
+|f(B)| = \prod_{i=1}^n|B-\lambda_iE| \neq 0
+\]
+\item[证(2)]
+\[
+A^2X = A(AX)=(AX)B = (XB)B = XB^2
+\]
+如此类推
+\[
+A^nX=XB^n \rightarrow 0 = f(A)X = Xf(B)
+\]
+因为$f(B)$可逆，所以$X=0$
+\end{description}
+
+\item $V$上两个线性变换$f,g$满足$\ker f \subset \ker g$。求证
+\begin{description}
+\item[(1)] 存在线性变换$h$，使得$g=hf$
+\item[(2)] 若$\ker f=\ker g$，则存在可逆线性变换$h$，使得$g=hf$
+\item[证(1)] $f,g$在某基下的矩阵为$A,B$，由$\ker f \subset \ker g$得$Ax=0$的解是$Bx=0$的解，从而$Ax=0$与
+\[
+\begin{cases}
+Ax=0 \\
+Bx=0 
+\end{cases}
+\]同解故
+\[
+\rank(A) = \rank( \left(
+\begin{array}{c}
+A\\
+B
+\end{array}
+\right) )
+\]
+从而$B$的行向量可由$A$的行向量线性表示，即存在$C$使得$B=CA$，则$g=hf$
+\item[证(2)] 见高等代数下P266
+\end{description}
+
+\item $V$是$n$维复向量空间，$(\cdot , \cdot):V\times V\rightarrow \mathbf{C}$是反对称的非退化双线性型，$\phi:V\rightarrow V$是一个线性变换，满足
+\[
+(\phi(u),\phi(\nu))=(u,\nu),\qquad \forall u,\nu \in V
+\]
+求证
+\begin{description}
+\item[(1)] $\dim V$是偶数
+\item[(2)] $\phi$是可逆的
+\item[(3)] 若$\lambda$是$\phi$的特征值，则$\frac{1}{\lambda}$也是$\phi$的特征值
+\item[证(2)] 由$\phi:V\rightarrow V$，可知是满射，只需证是单射。若$u\neq 0$，$(u,u)\neq 0$，$(\phi(u),\phi(u))\neq 0$，即$u\neq 0$时，$\phi(u)\neq 0$，即$\ker \phi={0}$，单射
+\item[证(3)] 设$\phi$在基$\{e_i\}_{1\leq i\leq n}$下的表示矩阵为$B$，则$\phi(e_k)=\sum_{j=1}^nb_{jk}e_j \Rightarrow(\phi(e_k),\phi(e_m))=\sum_{j,l=1}^nb_{jk}(e_j,e_k)b_{lm}=(e_k,e_m)$，所以$B^TAB=A$。设$B\alpha=\lambda\alpha$，则由$\phi$是可逆的知$\lambda\neq 0$，又$\alpha \neq 0 \Rightarrow A\alpha \neq 0$，$B^TAB\alpha = A\alpha \Rightarrow B^TA\alpha = \frac{1}{\lambda}A\alpha$，所以$\frac{1}{\lambda}$是$B^T$的特征值
+\end{description}
+\end{enumerate}

@@ -1,0 +1,199 @@
+\section{2013高代}
+\begin{enumerate}
+\item 求下面$n+1$阶行列式的值
+\[
+D=\left[
+\begin{array}{cccccc}
+s_0 & s_1 & s_2 & \cdots & s_{n-1} & 1 \\
+s_1 & s_2 & s_3 & \cdots & s_n & x \\
+s_2 & s_3 & s_4 & \cdots & s_{n+1} & x^2 \\
+\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+s_n & s_{n+1} & s_{n+2} & \cdots & s_{2n-1} & x^n \\
+\end{array}\right]
+\]
+其中，$s_k=x_1^k+x_2^k+\cdots+x_n^k$
+\begin{description}
+\item[解] 以后见到有加或者$\sum$的要想起矩阵乘法
+\[
+\left[
+\begin{array}{ccccc}
+x_1^0 & x_2^0 & \cdots & x_n^0 & x^0 \\
+x_1^1 & x_2^1 & \cdots & x_n^1 & x^1 \\
+\vdots & \vdots & \ddots & \vdots & \vdots \\
+x_1^n & x_2^n & \cdots & x_n^n & x^n \\
+\end{array}\right]
+\left[
+\begin{array}{ccccc}
+x_1^0 & x_1^1 & \cdots & x_1^{n-1} & 0 \\
+x_2^0 & x_2^1 & \cdots & x_2^{n-1} & 0 \\
+\vdots & \vdots & \ddots & \vdots & \vdots \\
+x_n^0 & x_n^1 & \cdots & x_n^{n-1} & 0 \\
+0 & 0 & \cdots & 0 & 1 \\
+\end{array}\right]
+\]
+\end{description}
+
+\item 假设矩阵$A$与$B$没有公共的特征根，$f(x)$是矩阵$A$的特征多项式，证明以下结论
+\begin{description}
+\item[(1)] 矩阵$f(B)$可逆
+\item[(2)] 矩阵方程$AX=XB$只有零解
+\item[证] 前几页有相同的题目
+\end{description}
+
+\item 设$A=(a_{i,j})_{1\leq i,j\leq n}$是斜对称方阵，证明若$A$可逆，其逆矩阵也是斜对称方阵
+\begin{description}
+\item[证] 斜对称方阵即$a_{ij}=a_{n+1-j,n+1-i}$
+\[
+A^* = \left[
+\begin{array}{ccc}
+A_{11} & A_{21} & \cdots\\
+A_{12} & A_{22} & \cdots \\
+\vdots & \vdots & \ddots \\
+\end{array}\right]
+\]
+其中
+\[
+A_{ij} = (-1)^{i+j} \left[
+\begin{array}{cccccc}
+a_{11} & \cdots & a_{1,j-1} & a_{1,j+1} & \cdots & a_{1n}\\
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots\\
+a_{i-1,1} & \cdots & a_{i-1,j-1} & a_{i-1,j+1} & \cdots & a_{i-1,n}\\
+a_{i+1,1} & \cdots & a_{i+1,j-1} & a_{i+1,j+1} & \cdots & a_{i+1,n}\\
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots\\
+a_{n1} & \cdots & a_{n,j-1} & a_{n,j+1} & \cdots & a_{nn}\\
+\end{array}\right]
+\]
+而
+\[
+A_{n+1-j,n+1-i} = (-1)^{i+j} \left[
+\begin{array}{cccccc}
+a_{nn} & \cdots & a_{n+2-j,n} & a_{n-j,n} & \cdots & a_{1n}\\
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots\\
+a_{n,n+2-i} & \cdots & a_{n+2-j,n+2-i} & a_{n-j,n+2-i} & \cdots & a_{1,n+2-i}\\
+a_{n,n-i} & \cdots & a_{n+2-j,n-i} & a_{n-j,n-i} & \cdots & a_{1,n-i}\\
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots\\
+a_{n,1} & \cdots & a_{n+2-j,1} & a_{n-j,1} & \cdots & a_{11}\\
+\end{array}\right]
+\]
+
+\end{description}
+
+\item 设二次曲面$x^2+ay^2+z^2+2bxy+2xz+2yz=4$可以经由正交变换
+\[
+\left(
+\begin{array}{c}
+x \\
+y \\
+z \\
+\end{array}\right) = P \left(
+\begin{array}{c}
+\xi \\
+\eta \\
+\zeta \\
+\end{array}\right)
+\]
+化成椭圆柱面方程$\eta^2+4\zeta^2=4$，试求$a,b$和正交矩阵$P$
+\begin{description}
+\item[解] $1+a+1 = 0+1+4 \Rightarrow a = 3$，再由$|\lambda E-A|=0 \Rightarrow b =1$
+\end{description}
+
+\item 假设3阶实方阵$A$满足$A^2 = E$，$E$是单位方阵，$A\neq \pm E$。证明$(\tr(A))^2 = 1$
+\begin{description}
+\item[证] 最小多项式是$(A-E)(A+E)=0$，故特征值只能是$1$或者$-1$。并且，$1$和$-1$至少有一个。
+\end{description}
+
+\item 设$A$为$n$阶半正定实矩阵。证明$|A+2013E|\geq2013^n$，等号成立当且仅当$A=0$
+\begin{description}
+\item[证] 存在正交矩阵$P$，使得$P^TAP=\diag(\lambda_1,\cdots,\lambda_n)$
+\end{description}
+
+\item 证明任何一个实方阵均可表示成两个对称矩阵的乘积，其中至少有一个矩阵可逆
+\begin{description}
+\item[证] 设$A$的标准型为
+\[
+P^{-1}AP = J = \left(
+\begin{array}{ccc}
+J_1 & & \\
+ & \ddots & \\
+ & & J_s \\
+\end{array}\right)
+\]
+其中
+\[
+J_i = \left(
+\begin{array}{cccc}
+\lambda_i & & & \\
+1 & \lambda_i & & \\
+ & \ddots & \ddots & \\
+ & & 1 & \lambda_i \\
+\end{array} \right) = \left(
+\begin{array}{cccc}
+ & & & 1\\
+ & & \ddots & \\
+ & 1 & & \\
+1 & & & \\
+\end{array}\right)\left(
+\begin{array}{cccc}
+ & & 1 & \lambda_i\\
+ & \ddots & \lambda_i & \\
+1 & \ddots & & \\
+\lambda_i & & & \\
+\end{array}\right) =B_iC_i
+\]
+\end{description}
+
+\item 设$A$是一个$3\times 3$正交矩阵，证明$A$可以写成$CR$，其中$C$对应$\mathbf{R}^3$中的旋转变换，$R$对应$\mathbf{R}^3$中的恒等变换或镜面反射变换
+\begin{description}
+\item[证] 见高等代数上P302
+\end{description}
+
+
+\item 设$V$是数域$\mathbf{F}$上的有限维向量空间，$\phi$是$V$上的线性变换。证明$V$能够分解成两个子空间之和$V=U\oplus W$，其中$U,W$满足$\forall u\in U$，$\exists k\in\mathbf{N}^*$，使得$\phi^k(u)=0$，$\forall w\in W$，$\exists v_m\in V$，使得$w=\phi^m(v_m)$，$\forall m\in\mathbf{N}^*$
+\begin{description}
+\item[证] 设$U=\cup_{k=1}^\infty \ker\mathcal{A}^k,W=\cap_{k=1}^\infty \Ima\mathcal{A}^m$，由
+\[
+\ker\mathcal{A} \subset \ker\mathcal{A}^2 \subset \cdots,\Ima\mathcal{A}\supset \Ima\mathcal{A}^2 \supset \cdots
+\]
+$U,W$是$V$的线性子空间
+\[
+U = \ker\mathcal{A}^k = \ker\mathcal{A}^{k+1} = \cdots, W = \Ima\mathcal{A}^l = \Ima\mathcal{A}^{l+1} = \cdots
+\]
+取$i = \max \{k,l\}$，有
+\[
+U = \ker\mathcal{A}^i,W = \Ima\mathcal{A}^i
+\]
+而$\dim U+\dim W=n$，只需证$U \cap W = 0$，设$\alpha \in U \cap W $，则$\exists \alpha_i \in V,\mathcal{A}^i\alpha =0,\alpha=\mathcal{A}^i\alpha_i$。有$\mathcal{A}^{2i}\alpha_i=0\Rightarrow \alpha_i \in\ker\mathcal{A}^{2i}=\ker\mathcal{A}^i \Rightarrow \alpha = \mathcal{A}^i \alpha_i = 0 $
+\end{description}
+
+\item 设$V$是$\mathbf{R}$上的$n$维线性空间，$\phi$是$V$上的线性变换，满足$\phi^2=-\epsilon$
+\begin{description}
+\item[(1)] 证明$n$是偶数
+\item[(2)] 若$\psi$是$V$上的线性变换，满足$\psi\phi=\phi\psi$，证明det$(\psi)\geq 0$
+\item[证(2)] 设$V_1=\{\alpha |\phi \alpha = i\alpha\},V_2=\{\beta |\phi \beta = -i\beta\}$，则$V_1\oplus V_2=V,\overline{V_1}=V_2$。由$\psi\phi=\phi\psi$，$V_1,V_2$均为$\psi-$子空间。取$V_1$的一组基$\alpha_1,\cdots,\alpha_m$，则$\alpha_1,\cdots,\alpha_m,\overline{\alpha_1},\cdots,\overline{\alpha_m}$为$V$的一组基，在该基下$\psi$的矩阵
+\[
+\left(
+\begin{array}{cc}
+B & \\
+ & \overline{B}
+\end{array} \right)
+\]
+于是$\det(\psi)=\det(B)\cdot\det(\overline{B}) = \det(B)\cdot \overline{\det(B)} \geq 0$
+\end{description}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}

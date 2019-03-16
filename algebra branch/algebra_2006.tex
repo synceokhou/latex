@@ -1,0 +1,203 @@
+\begin{itemize}
+\item 已知$\alpha,\beta,\gamma$，求
+\[
+A= \left(
+\begin{array}{cccc}
+ \alpha & \beta & & \\
+\gamma & \alpha & \ddots & \\
+ & \ddots & \ddots & \beta \\
+ & & \gamma & \alpha
+\end{array}
+\right) \in \mathbf{R}^{n \times n}
+\]
+的行列式的值
+\begin{description}
+\item[解] 2014年考了同样的题目，$D_n=\alpha D_{n-1}-\gamma\beta D_{n-2}$
+\[
+\begin{cases}
+D_n-x_1D_{n-1}=x_2(D_{n-1}-x_1D_{n-2})=x_2^{n-2}(D_2-x_1D_1)\\
+D_n-x_2D_{n-1}=x_1(D_{n-1}-x_2D_{n-2})=x_1^{n-2}(D_2-x_2D_1)
+\end{cases}
+\]
+这个时候就要解出$x_1,x_2,D_1,D_2$
+\end{description}
+
+\item 线性方程组
+\[
+\begin{cases}
+a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n =0\\
+a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n =0\\
+\vdots \\
+a_{n-1,1}x_1 + a_{n-1,2}x_2 + \cdots + a_{n-1,n}x_n =0\\
+\end{cases}
+\]
+的系数矩阵为$A$，设$M_j(j=1,2,\cdots,n)$是在矩阵$A$中划去第$j$列所得到的$n-1$阶子式，证
+\begin{description}
+\item[(1)] $(M_1,-M_2,\cdots,(-1)^{n-1}M_n)$是方程组的一个解
+\item[(2)] 如果$A$的秩为$n-1$，那么方程组的解全是$(M_1,-M_2,\cdots,(-1)^{n-1}M_n)$的倍数
+\item[证(1)] 和2016年的题目很像啊。在这题，不是随便加一行，然后按该行展开。而是要确保加了这一行，变成方阵后的行列式值为零
+\item[证(2)] 解空间的维数为1，而$(M_1,-M_2,\cdots,(-1)^{n-1}M_n)$属于那个解空间
+\end{description}
+
+\item 若$\alpha$为一实数，计算
+\[
+\lim_{n \to +\infty}\left(
+\begin{array}{cc}
+1 & \frac{\alpha}{n}\\
+\frac{\alpha}{n} & 1 \\
+\end{array}
+\right)^n
+\]
+\begin{description}
+\item[解] 分$\alpha=0$或者$\alpha\neq 0$，下面讨论$\alpha\neq 0$。$|\lambda E-A|=(\lambda-1)^2-\frac{\alpha^2}{n^2}=0$，解得$\lambda=1 \pm \frac{\alpha}{n}$
+\[
+P^{-1}AP=\left(
+\begin{array}{cc}
+1+\frac{\alpha}{n} & \\
+ & 1-\frac{\alpha}{n} \\
+\end{array}
+\right),
+P=\frac{1}{\sqrt{2}}\left(
+\begin{array}{cc}
+-1 & 1\\
+1 & 1\\
+\end{array}
+\right)
+\]
+注意这里有数分一个极限
+\begin{eqnarray*}
+\lim_{n \to +\infty} A^n &=& \lim_{n \to +\infty} PA^nP^{-1}\\
+&=& \frac{1}{2} \left(
+\begin{array}{cc}
+-1 & 1\\
+1 & 1\\
+\end{array}
+\right)
+\left(
+\begin{array}{cc}
+e^\alpha & \\
+ & e^{-\alpha} \\
+ \end{array}
+\right)
+\left(
+\begin{array}{cc}
+-1 & 1\\
+1 & 1\\
+\end{array}
+\right)
+\end{eqnarray*}
+\end{description}
+
+
+\item 设$\alpha$为实数
+\[
+A=\left(
+\begin{array}{cccc}
+a & 1 & & \\
+ & a & \ddots & \\
+ & & \ddots & 1 \\
+ & & & a
+\end{array}
+\right) \in \mathbf{R}^{100 \times 100}
+\]
+求$A^{50}$第一行元素之和
+\begin{description}
+\item[解] 极小多项式然后取模。但是这里不行，只能找规律。二项式展开，然后再收回到矩阵里面来，再数学归纳法
+\end{description}
+
+
+\item 若向量组$\alpha_1,\alpha_2,\cdots,\alpha_s(s>2)$线性无关，讨论$\alpha_1+\alpha_2,\alpha_2+\alpha_3,\cdots,\alpha_{s-1}+\alpha_s,\alpha_s+\alpha_1$线性相关性
+\begin{description}
+\item[解]
+\[
+(\alpha_1,\alpha_2,\cdots,\alpha_s)H=(\alpha_1+\alpha_2,\alpha_2+\alpha_3,\cdots,\alpha_{s-1}+\alpha_s,\alpha_s+\alpha_1)
+\]
+$H$长啥样会求吧，$\rank(H)$决定后者线性相关性，其实这里是不是要说一下。假定线性相关，存在不全为零的$k_1,\cdots,k_n$，使得$k_1(\alpha_1+\alpha_2)+k_2(\alpha_2+\alpha_3)+\cdots+k_{s-1}(\alpha_{s-1}+\alpha_s)+k_s(\alpha_s+\alpha_1)=0$，又$\alpha_1,\alpha_2,\cdots,\alpha_s(s>2)$线性无关，$k_1+k_2=\cdots=k_n+k_1=0$
+\[
+\left(
+\begin{array}{ccccc}
+1 & 1 & 0 & \cdots & 0\\
+0 & 1 & 1 & \cdots & 0\\
+0 & 0 & 1 & \cdots & 0\\
+\vdots & \vdots & \vdots & \ddots & \vdots\\
+1 & 0 & 0 & \cdots & 1\\
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+k_1\\
+\vdots\\
+k_n\\
+\end{array}
+\right)=0
+\]
+\end{description}
+
+\item 已知二次曲面方程$x^2+ay^2+z^2+2bxy+2xz+2yz=4$可以经正交变换
+\[
+\left(
+\begin{array}{c}
+x \\
+y\\
+z
+\end{array}
+\right) = P \left(
+\begin{array}{c}
+x' \\
+y' \\
+z'
+\end{array}
+\right)
+\]
+化为椭圆柱面方程$y'^2+4z'^2=4$，求$a,b$的值和正交矩阵$P$
+\begin{description}
+\item[解] 看迹马上知道$a=3$，因为正交，直接求行列式可得$b=0$
+\end{description}
+
+\item 设有实二次型$f(x)=x^TAx$，其中$A$是$3\times 3$实对称矩阵并满足$A^3-6A^2+11A-6I=0$，计算
+\[
+\max_{A}\max_{\|x\|=1}f(x)
+\]
+其中$\|x\|^2=x_1^2+x_2^2+x_3^2$，第一个极大值是对满足以上方程的所有实对称矩阵$A$来求
+\begin{description}
+\item[解] 首先$\|x\|=1$是单位向量，其次特征向量对矩阵多项式不变。找到最大特征值即可
+\end{description}
+
+\item $A\in \mathbf{R}^{2006 \times 2006}$是给定的幂零矩阵（即$\exists p\in \mathbf{N}^+$使得$A^p=0$而$A^{p-1}\neq 0$），分析$Ax=0$非零独立解个数的最大值和最小值
+\begin{description}
+\item[解] 说白了是求$\rank(A)$的范围。幂零矩阵至少有一个若当块，$\rank(A)\geq p-1$。另一方面，请使用Sylvester秩不等式，见高等代数上4.5例2
+\end{description}
+
+\item 设$f$是有限维向量空间$V$上的线性变换，且$f^n$是$V$上的恒等变换，$n$是某个正整数。设$W=\{v\in V|f(v)=v\}$。证明$W$是$V$的一个子空间，并且其维数等于线性变换$\frac{f+f^2+\cdots+f^n}{n}$的迹
+\begin{description}
+\item[解] 首先考虑几个问题，子空间的定义要背，在某组基下，矩阵为$A$，则$A^n-I=0$是零化多项式。另外零化多项式包含所有特征根，就是那$n$个复根，每个根都不同且为一次，可以判断是最小多项式，并且 相似于对角形。然后$W$其实是$\ker(A-I)$，后面都用对角的话超级快
+\end{description}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{itemize}

@@ -1,0 +1,104 @@
+\section{2006数分}
+\begin{enumerate}
+
+\item 设$f(x)$在$(a,+\infty)$内可导，且$\lim_{x \to a+}f(x)=\lim_{x \to +\infty}f(x)=\beta$，其中$\beta$为有限数或者$+\infty$或者$-\infty$。证明$\exists \xi \in (a,+\infty)$，使得$f'(\xi)=0$
+\begin{description}
+\item[证] 情况一：$\beta$为有限数，先补$f(a)$，$f(x)$与直线$y=A+\epsilon$或$y=A-\epsilon$至少有两个交点，然后经典罗尔定理；情况二：$\beta$为无穷，不妨设$\beta=+\infty$，令$F(x)=e^{-f(x)}$，则$F(x)$在$(a,+\infty)$内连续，且$\lim_{x \to a+}F(x)=\lim_{x \to +\infty}F(x)=0,F(x)>0(a<x<+\infty)$，且在$[a,+\infty)$上连续，并在$(a,+\infty)$上取得最大值。设最大值点为$b\in (a,+\infty)$，则有$e^{-f(b)}=F(b)\geq F(x)= e^{-f(x)}(a<x<+\infty)$，即$\forall x \in (a,+\infty),f(b)\leq f(x)$，故$f(b)$为$f(x)$在$(a,+\infty)$内的最小值，由费马定理知$f'(b)=0$（情况二证不对，要和一那样画线）
+\end{description}
+
+\item 计算积分
+\begin{description}
+\item[(1)]
+\[
+\int_0^1 \frac{\ln(1+x)}{1+x^2}\ud x
+\]
+\item[(2)]
+\[
+\int_{-\infty}^{+\infty}e^{-\frac{x^2}{2}} \ud x
+\]
+\item[(3)]
+\[
+\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-[x^2+(y-x)^2+y^2]}\ud x\ud y
+\]
+\item[解(2)] 平方之后变二重积分再换元再开方
+\item[解(3)] 拆括号，分两个，前一个用二，后一个直角坐标45度代换再用二
+\end{description}
+
+\item 设函数$f(x)$在$[0,1]$上二阶可导，且$f(0)=f(1)=0,\min_{0\leq x\leq 1}f(x)=-1$。证明$\exists \xi \in (0,1)$，使得$f''(\xi)\geq 8$
+\begin{description}
+\item[证] 两层拉格朗日
+\end{description}
+
+\item 证明
+\begin{description}
+\item[(1)] 任一实数列必为两个单调递增数列之差
+\item[(2)] 设$\lim_{n \to \infty}a_n =a$，求
+\[
+\lim_{n \to \infty} \frac{\sum_{i=1}^nia_i}{n^2}
+\]
+\item[证(1)] 构造性证明。设$\{a_n\}$为任意数列，$\{b_n\}$为一递增数列，令$\{c_n\}$满足$c_n=a_n+b_n$，只要$c_n-c_{n-1}=(b_n-b_{n-1})+(a_n-a_{n-1})>0$即可，如
+\[
+b_n=
+\begin{cases}
+(n-1)+b_1+\sum_{i=1}^n|a_i-a_{i-1}| & n>1\\
+b_1& n=1
+\end{cases}
+\]
+和
+\[
+c_n=
+\begin{cases}
+(n-1)+b_1+\sum_{i=1}^n(|a_i-a_{i-1}|+a_i-a_{i-1}) & n>1\\
+b_1+a_1 & n=1
+\end{cases}
+\]
+\item[证(2)] 这题我回想到3个技巧，第一个是用$\alpha_n = a_n - a$，接下去用定义证，可以取另一条线，第二个是，记$S_n=\sum_{k=1}^na_k$，则$\sum_{k=1}^na_k=\sum_{k=1}^n[(k+(n-k))a_k-(n-k)a_k]=nS_n-\sum_{k=1}^{n-1}S_k$，第三个是，到这一步可以用stolz公式
+\end{description}
+
+\item 设$f(x)$在$[a,b]$上连续，且$\forall x \in [a,b],\exists y \in [a,b],\exists z \in (0,\frac{1}{2})$，使得$|f(y)|\leq z|f(x)|$。证$f(x)$在$[a,b]$上至少有一个零点
+\begin{description}
+\item[证] 反证，不妨设$f(x)>0$，且有最小值，在$x_0$处取到，又blabla，还有更小，矛盾
+\end{description}
+
+\item 求幂级数$\sum_{n=0}^{\infty}(3n+5)x^n$的收敛域，并求其和函数
+\begin{description}
+\item[解] 开根号或者比值，然后判断边界，最后拆开，积分，可见南开大学数分下P157
+\end{description}
+
+\item 计算二重积分$\iint_D\sqrt{|y-x^2|}\ud x\ud y$，其中$D$为区域$|x|\leq 1,0\leq y \leq 2$
+\begin{description}
+\item[解] 分块，只用算一边
+\end{description}
+
+\item 设$f(x),x\in \mathbf{R}^n$存在二阶连续偏导数，$\nabla f(x)$表示$f(x)$的剃度，$\nabla^2 f(x)=(h_{ij})_{n\times n}$表示$f(x)$的Hesse矩阵，其中
+\[
+h_{ij}=\frac{\partial^2 f}{\partial x_i \partial x_j}(i,j=1,2,\cdots,n)
+\]
+\begin{description}
+\item[(1)] 设$a\in \mathbf{R}^n$是$f(x)$的稳定点，即$\nabla f(a)=0$。如果$\nabla^2 f(x)$在$x=a$处为正定的，证明$a$是$f(x)$的一个局部极小值点
+\item[(2)] 设$f(x)$的Hesse矩阵在所有$x\in\mathbf{R}^n$点处正定，证明$f(x)$至多有一个稳定点
+\item[证(1)] 定理原句，见南开大学数分下P110
+\item[证(2)] 多元泰勒公式，在$x_0$展开，得出所有点大于$x_0$，再反证，设$x_1$的$\nabla f(x_1)=0$，再$x_1$到$x_0$，然后就矛盾
+\end{description}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}

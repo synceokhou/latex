@@ -1,0 +1,136 @@
+\section{2004数分}
+\begin{enumerate}
+
+\item 设$f(x)=\int_0^{\sin x}\arctan t^2 \ud t,g(x)=\int_0^x (3t^2+t^3\cos t)\ud t$，求$\lim_{x \to 0}\frac{f(x)}{g(x)}$
+\begin{description}
+\item[解]
+\begin{eqnarray*}
+&=&\lim_{x\to 0}\frac{\arctan \sin^2x\cdot \cos x}{3x^2+x^3\cos x}\\
+&=&\lim_{x\to 0}\frac{\arctan \sin^2x}{\sin^2x}\cdot\frac{\sin^2x}{x^2}\cdot\frac{x^2}{x^2(3+x\cos x)}\cdot\cos x
+\end{eqnarray*}
+\end{description}
+
+
+\item 计算$\sum_{n=0}^{\infty}(n^2+n+1)x^n$，其中$|x|<1$
+\begin{description}
+\item[解] 当$x=0$时，上式为0，当$x\neq 0$时
+\begin{eqnarray*}
+&=& \sum_{n=0}^\infty[(n+2)(n+1)-2(n+1)+1]x^n\\
+&=& \left[\sum_{n=0}^\infty x^n\right]''-2\left[\sum_{n=0}^\infty x^n\right]'+\left[\sum_{n=0}^\infty x^n\right]\\
+&=& 2(1-x)^{-3}-2(1-x)^{-2}+(1-x)^{-1}
+\end{eqnarray*}
+\end{description}
+
+\item 判断函数
+\[
+\psi(x) = \int_x^1\left\{ \int_x^1 \frac{u-v}{(u+v)^3}\ud u \right\}\ud v (0\leq x \leq 1)
+\]
+在$x=0$及$x=1$处的连续性
+\begin{description}
+\item[证] 请注意积分的技巧
+\[
+\frac{u-v}{(u+v)^3}=\frac{1}{(u+v)^2}-\frac{2v}{(u+v)^3}
+\]
+此时对$u$积分已易如反掌，接着积下去可得关于$x$函数，可直接判断连续性
+\end{description}
+
+\item 设无穷数列$\{\alpha_n\},\{\beta_n\}$满足$\lim_{n \to \infty}\alpha_n =\alpha,\lim_{n \to \infty}\beta_n =\beta$，证明
+\[
+\lim_{n \to \infty} \frac{1}{n} \sum_{i=1}^n \alpha_i\beta_{n+1-i} = \alpha \beta
+\]
+\begin{description}
+\item[证] 令$a_n=\alpha_n-\alpha,b_n=\beta_n-\beta$，则$\lim_{n\to\infty}a_n=0=\lim_{n\to\infty}b_n$
+\begin{eqnarray*}
+& &\lim_{n \to \infty} \frac{1}{n} \sum_{i=1}^n \alpha_i\beta_{n+1-i}\\
+&=&\lim_{n \to \infty} \frac{1}{n} \sum_{i=1}^n (a_i+\alpha)(b_{n+1-i}+\beta)\\
+&=&\lim_{n \to \infty}\left\{\frac{1}{n}\sum_{i=1}^na_ib_{n+1-i}+\frac{\beta}{n}\sum_{i=1}^na_i +\frac{\alpha}{n}\sum_{i=1}^nb_i\right\}+\alpha \beta
+\end{eqnarray*}
+下面证明$\lim_{n \to \infty}\frac{1}{n}\sum_{i=1}^nb_i=0=\lim_{n \to \infty}\frac{1}{n}\sum_{i=1}^na_i$
+\begin{eqnarray*}
+\left|\frac{1}{n}\sum_{i=1}^{n}a_i\right|&\leq&\frac{1}{n}\sum_{i=1}^{n}|a_i|\\
+&\leq&\frac{1}{n}\sum_{i=1}^{N}|a_i|+\frac{n-N}{n}\frac{\epsilon}{2}(n\geq N\Rightarrow|a_i|<\frac{\epsilon}{2})\\
+&\leq&\frac{M_1}{n}+\frac{\epsilon}{2}(M_1=\sup_i|a_i|)\\
+&\leq&\epsilon(n>\frac{2M_1}{\epsilon})
+\end{eqnarray*}
+再证$\lim_{n \to \infty}\frac{1}{n}\sum_{i=1}^na_ib_{n+1-i}=0$，在这里我们可以随便取$\epsilon$的值$(M_1=\sup_i|a_i|,M_2=\sup_i|b_i|,i\geq N\Rightarrow|a_i|<\frac{\epsilon}{2M_1},|b_i|<\frac{\epsilon}{2M_2})$以满足以下计算
+\begin{eqnarray*}
+\left|\frac{1}{n}\sum_{i=1}^{n}a_ib_{n+1-i}\right|&\leq&\frac{1}{n}\sum_{i=1}^{N}|a_ib_{n+1-i}|+\frac{1}{n}\sum_{i=N+1}^{n}|a_ib_{n+1-i}|\\
+&\leq&\frac{NM_1}{n}\frac{\epsilon}{2M_1}+\frac{(n-N)M_2}{n}\frac{\epsilon}{2M_2}\\
+&<&\epsilon(n\geq2N-1)
+\end{eqnarray*}
+\end{description}
+
+
+\item 设$p>0$是常数，求证
+\[
+\lim_{n\to \infty}\int_n^{n+p} \frac{\ud x}{\sqrt{x^2+1}} = 0
+\]
+\begin{description}
+\item[证] 由
+\[
+0<\int_n^{n+p}\frac{1}{\sqrt{x^2+1}}\ud x<\frac{p}{n}
+\]
+\end{description}
+\item 证广义积分$J=\int_0^{\infty}ye^{-yx}\ud x$在区间$0<a\leq y\leq b$内一致收敛，而在区间$0\leq y\leq b$内非一致收敛
+\begin{description}
+\item[证] 首先要明确广义积分一致收敛的定义，不要和函数一致联系搞混了。$\forall \epsilon>0$，取$A>0$，使得$e^{-Aa}<\epsilon$，而
+\[
+A_2>A_1>A>0\Rightarrow\left|\int_{A_1}^{A_2}ye^{-yx}\ud x \right|=e^{-yA_1}-e^{-yA_2}<e^{-aA}<\epsilon
+\]
+再证非一致收敛
+\[
+n\in \mathbf{N}\Rightarrow\left|\int_n^{2n}\frac{1}{n}e^{-\frac{1}{n}\ud x}\right|=e^{-1}-e^{-2}>0
+\]
+\end{description}
+
+\item 证明
+\[
+\sin x\sin y \sin(x+y)\leq \frac{3\sqrt{3}}{8} (0<x,y<\pi)
+\]
+并确定何时等号成立
+\begin{description}
+\item[证] 非常普通的求最值，不过题目居然是开区间，不用考虑边界，注意使用南开大学数分P110的多元极值充分条件
+\end{description}
+
+\item 有一半径为$R$的球，其球心在一正圆柱面上，该圆柱的底面半径是$\frac{R}{2}$，求球面被柱面所割部分的面积
+\begin{description}
+\item[证] 画图，然后用最普通的圆柱代换
+\end{description}
+
+\item 设$a\geq 0$，证明
+\[
+\int_0^\infty \frac{\ud x}{(1+x^2)(1+x^\alpha)} = \frac{\pi}{4}
+\]
+\begin{description}
+\item[证]
+\begin{eqnarray*}
+&=&\int_0^1 \frac{\ud x}{(1+x^2)(1+x^\alpha)}+\int_1^\infty \frac{\ud x}{(1+x^2)(1+x^\alpha)}\\
+&=&\int_0^1 \frac{\ud x}{(1+x^2)(1+x^\alpha)}+\int_1^0 \frac{\ud \frac{1}{x}}{(1+\frac{1}{x^2})(1+\frac{1}{x^\alpha})}
+\end{eqnarray*}
+然后上下乘$x^2$和$x^\alpha$你就懂了
+\end{description}
+
+\item 设$f$上$(0,\infty)$上具有二阶连续导数的正函数，$f'\leq 0,f''$有界，则$\lim_{t \to \infty}f'(t)=0$
+\begin{description}
+\item[证] 用下确界把$f(x)$的极限找出来，然后用泰勒展开，继续用下确界限制$f'(x)$
+\end{description}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}

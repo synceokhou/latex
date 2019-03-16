@@ -1,0 +1,162 @@
+\section{2006数分}
+\begin{enumerate}
+
+\item 求$a,b$使下列函数在$x=0$处可导
+\[
+y=\begin{cases}
+ax+b & x\geq 0;\\
+x^2+1 & x<0
+\end{cases}
+\]
+\begin{description}
+\item[解] 在$x=0$可导，所以连续，由$f_+(0)=f_-(0)$得$b=-1$，又有$f'_+(0)=f'_-(0)$得$a=0$
+\end{description}
+
+\item 已知$a_n>0,\sum_{n=1}^{\infty}\frac{1}{a_n}$发散，求证$\sum_{n=1}^{\infty}\frac{1}{a_n+1}$也发散
+\begin{description}
+\item[证] 都大于零，比较判别法
+\[
+\lim_{n\to \infty} \frac{a_n}{a_n+1}=1
+\]
+同收敛同发散？
+\end{description}
+
+\item 设$m,n\geq 0$为整数，求积分$\int_0^1 x^m(1-x)^n \ud x$的值
+\begin{description}
+\item[解] 原式记为$I(m,n)$
+\begin{eqnarray*}
+I(m,n) &= & (1-x)^n\frac{x^{m+1}}{m+1}|_0^1-\int_0^1n(1-x)^{n-1}(-1)\frac{x^{m+1}}{m+1}\ud x\\
+&= & \frac{n}{m+1}I(m+1,n-1)\\
+&=&\frac{n}{m+1}\frac{n-1}{m+2}\cdots\frac{1}{m+n}I(m+n,0)
+\end{eqnarray*}
+\end{description}
+
+\item 设$a > 0$，$f(x)$是定义在$[-a,a]$上的连续的偶函数，证
+\[
+\int_{-a}^a\frac{f(x)}{1+e^x}\ud x =\int_0^a f(x)\ud x
+\]
+\begin{description}
+\item[证] 由
+\[
+\frac{f(-x)}{1+e^{-x}} = \frac{f(x)}{1+e^{-x}}
+\]
+可得以下
+\begin{eqnarray*}
+\int_{-a}^a\frac{f(x)}{1+e^x}\ud x &=& \int_{0}^a\frac{f(x)}{1+e^x}\ud x +\int_{-a}^0\frac{f(x)}{1+e^x}\ud x \\
+& = & \int_{0}^a\frac{f(x)}{1+e^x}\ud x + \int_{a}^0\frac{f(x)}{1+e^{-x}}\ud -x \\
+& = & \int_{0}^a\frac{f(x)}{1+e^x}\ud x + \int_{0}^a\frac{f(x)}{1+e^{-x}}\ud x \\
+& = & \int_{0}^af(x)[\frac{1}{1+e^x}+\frac{1}{1+e^{-x}}]\ud x
+\end{eqnarray*}
+\end{description}
+
+\item 设函数$f(x)$在含有$[a,b]$的某个开区间内二次可导且$f'(a)=f'(b)=0$，证$\exists \xi \in (a,b)$使得
+\[
+|f''(\xi)|\geq \frac{4}{(b-a)^2}|f(b)-f(a)|
+\]
+\begin{description}
+\item[证] 由
+\begin{eqnarray*}
+f\left(\frac{a+b}{2}\right)& = &f(a) + f'(a)\frac{b-a}{2}+\frac{f''(\xi_1)}{2}\left(\frac{b-a}{2}\right)^2\\
+f\left(\frac{a+b}{2}\right)& = &f(b) + f'(b)\frac{a-b}{2}+\frac{f''(\xi_2)}{2}\left(\frac{a-b}{2}\right)^2
+\end{eqnarray*}
+知
+\begin{eqnarray*}
+|f(b)-f(a)|&=&\frac{(b-a)^2}{8}|f''(\xi_1)-f''(\xi_2)|\\
+&\leq&\frac{(b-a)^2}{4}\max\{|f''(\xi_1)|,|f''(\xi_2)|\}
+\end{eqnarray*}
+\end{description}
+
+
+\item 设实值函数$f(x)$及其一阶导数在区间$[a,b]$上均连续，而且$f(a)=0$，则
+\begin{eqnarray*}
+\max_{x\in [a,b]}|f(x)| & \leq & \sqrt{b-a}(\int_a^b|f'(t)|^2 \ud t)^\frac{1}{2}\\
+\int_a^b f^2(x)\ud x & \leq & \frac{1}{2}(b-a)^2\int_a^b|f'(t)|^2\ud x
+\end{eqnarray*}
+\begin{description}
+\item[证] 首先$[\int_a^bhg\ud x]^2\leq [\int_a^bh^2\ud x][\int_a^bg^2\ud x]$这个东西要证，然后观察到$|f(x)|=|\int_a^xf'(t)\ud t|$，于是令$h=1,g=f'(t)$
+\begin{eqnarray*}
+\left|\int_a^xf'(t)\ud t\right| &\leq &\sqrt{x-a}\left(\int_a^x|f'(t)|^2\ud t\right)^\frac{1}{2}\\
+&\leq &\sqrt{b-a}\left(\int_a^b|f'(t)|^2\ud t\right)^\frac{1}{2}
+\end{eqnarray*}
+由上式，代入$\int_a^b f^2(x)\ud x$里面
+\begin{eqnarray*}
+\int_a^b f^2(x)\ud x &\leq & \int_a^b \left[(x-a)\int_a^x|f'(t)|^2\ud t \right]\ud x\\
+&\leq & \int_a^b (x-a)\ud x \cdot \int_a^b|f'(t)|^2\ud x\\
+\end{eqnarray*}
+\end{description}
+
+
+\item 设$n$是平面区域$D$的正向边界线$C$的外法向，则
+\[
+\oint_C \frac{\partial u}{\partial n}\ud s=\iint_D\left(\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2} \right)\ud x \ud y
+\]
+\begin{description}
+\item[证]
+\begin{eqnarray*}
+\oint_C \frac{\partial u}{\partial n}\ud s & = & \oint_C [\frac{\partial u}{\partial x}\cos(n,x)+ \frac{\partial u}{\partial y}\cos(n,y)]\ud s\\
+& = & \oint_C [\frac{\partial u}{\partial x}\cos(t,y)- \frac{\partial u}{\partial y}\cos(t,x)]\ud s\\
+& = & \oint_C \frac{\partial u}{\partial x}\ud y - \frac{\partial u}{\partial y}\ud x\\
+\end{eqnarray*}
+\end{description}
+
+\item 设$\Gamma : \frac{x^2}{a^2}+\frac{y^2}{b^2}=1$的周长和所围成的面积分别是$L$和$S$，还令
+\[
+J = \oint_{\Gamma}(b^2x^2+2xy+a^2y^2)\ud s
+\]
+证$J=\frac{S^2L}{\pi^2}$
+\begin{description}
+\item[证] 注意$xy$在$\Gamma$上的第一型曲线积分正好消掉了为0，然后用椭圆柱代换
+\begin{eqnarray*}
+J &=& \oint_{\Gamma}(b^2x^2+a^2y^2)\ud s\\
+&＝&a^2b^2L\\
+&=&\frac{(\pi ab)^2L}{\pi^2}\\
+& =& \frac{S^2L}{\pi^2}
+\end{eqnarray*}
+\end{description}
+
+\item 计算
+\[
+\int_0^1 \frac{\ud x}{1+x^3}
+\]
+的值，并证明
+\[
+\int_0^1 \frac{\ud x}{1+x^3} = \sum_{n=0}^\infty \frac{(-1)^{n-1}}{3n-2}
+\]
+\begin{description}
+\item[证]
+\begin{eqnarray*}
+\int_0^1 \frac{\ud x}{1+x^3} &= & \int_0^1 \frac{\ud x}{(1+x)(1-x+x^2)}\\
+&= & \frac{1}{3}\int_0^1 \left(\frac{1}{1+x} +\frac{-x+2}{1-x+x^2}\right)\ud x\\
+&=& \int_0^1\sum_{n=0}^\infty(-1)^nx^{3n}\ud x\\
+&=&\sum_{n=0}^\infty \frac{(-1)^n}{3n+1}\\
+&=&\sum_{n=1}^\infty \frac{(-1)^{n-1}}{3n-2}
+\end{eqnarray*}
+\end{description}
+
+\item 求$x=a\cos^3 t,y=a\sin^3 t,a>0$绕直线$y=x$旋转所围成的曲面的表面积
+\begin{description}
+\item[解] 硬解，画图观察，切成对称两个面
+\begin{eqnarray*}
+S &= & 2 \int_{\frac{\pi}{4}}^{\frac{3\pi}{4}} 2\pi \frac{|a\cos^3t-a\sin^3t|}{\sqrt{2}}\sqrt{x'^2(t)+y'^2(t)}\ud t\\
+&=&6\sqrt{2}\pi a^2\left[\int_{\frac{\pi}{4}}^{\frac{3\pi}{4}}|\cos^3t-\sin^3t||\sin t\cos t| \right]\ud t
+\end{eqnarray*}
+\end{description}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}

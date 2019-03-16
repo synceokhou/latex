@@ -1,0 +1,232 @@
+\section{2011高代}
+\begin{enumerate}
+\item 设$\frac{p}{q}$是既约分数，$f(x)=a_nx^n+a_{n-1}x^{n-1}+\dots+a_1x+a_0$是整系数多项式，而且$f(\frac{p}{q})=0$。证明
+\begin{description}
+\item[(1)] $p|a_0$而$q|a_n$
+\item[(2)] 对任意整数$m$，有$(p-mq)|f(m)$
+\item[证(1)] $f(x)=(qx-p)g(x)$
+\end{description}
+
+\item 设$n$阶方阵$A_n=(|i-j|)_{1\leq i,j \leq n}$，其行列式记为$D_n$。证明$D_n+4D_{n-1}+4D_{n-2}=0$，并求出$D_n$
+\begin{description}
+\item[证]
+\[
+D_n = \left[
+\begin{array}{ccccc}
+0 & 1 & 2 & \cdots & n-1 \\
+1 & 0 & 1 & \cdots & n-2 \\
+2 & 1 & 0 & \cdots & n-3 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+n-1 & n-2 & n-3 & \cdots & 0 \\
+\end{array}\right]
+\]
+第三行加到第一行，第一行减去两倍第二行
+\[
+D_n = \left[
+\begin{array}{ccccc}
+0 & 2 & 0 & \cdots & 0 \\
+1 & 0 & 1 & \cdots & n-2 \\
+2 & 1 & 0 & \cdots & n-3 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+n-1 & n-2 & n-3 & \cdots & 0 \\
+\end{array}\right] = -2 \left[
+\begin{array}{cccc}
+1 & 1 & \cdots & n-2 \\
+2 & 0 & \cdots & n-3 \\
+\vdots & \vdots & \ddots & \vdots \\
+n-1 & n-3 & \cdots & 0 \\
+\end{array}\right]
+\]
+再第二列加到第一列
+\[
+-2 \left[
+\begin{array}{cccc}
+2 & 1 & \cdots & n-2 \\
+2 & 0 & \cdots & n-3 \\
+\vdots & \vdots & \ddots & \vdots \\
+2n-4 & n-3 & \cdots & 0 \\
+\end{array}\right]
+\]
+分解成两个
+\[
+-4 \left[
+\begin{array}{cccc}
+0 & 1 & \cdots & n-2 \\
+1 & 0 & \cdots & n-3 \\
+\vdots & \vdots & \ddots & \vdots \\
+n-2 & n-3 & \cdots & 0 \\
+\end{array}\right]-2\left[
+\begin{array}{cccc}
+2 & 1 & \cdots & n-2 \\
+0 & 0 & \cdots & n-3 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & n-3 & \cdots & 0 \\
+\end{array}\right]
+\]
+\end{description}
+
+\item 已知二阶矩阵
+\[
+A=\left(
+\begin{array}{cc}
+a & b \\
+c & d \\
+\end{array}\right)
+\]
+的特征多项式为$(\lambda-1)^2$，求$A^{2011}-2011A$
+\begin{description}
+\item[解] $f(\lambda) = (\lambda-1)^2,g(\lambda)=\lambda^{2011}-2011\lambda$ \\
+$g(\lambda) = f(\lambda)p(\lambda) + k\lambda + b$\\
+$g'(\lambda) = f'(\lambda)p(\lambda)+ f(\lambda)p'(\lambda)+ k$\\
+\end{description}
+
+\item 设$\alpha,\beta,\gamma$是$3$维线性空间$V$的一组基，线性变换$\mathcal{A}$满足
+\[
+\left\{
+\begin{array}{l}
+\mathcal{A}(\alpha+2\beta+\gamma) = \alpha \\
+\mathcal{A}(3\beta+4\gamma) = \beta \\
+\mathcal{A}(4\beta+5\gamma) = \gamma \\
+\end{array}
+\right.
+\]
+求$\mathcal{A}$在基$\alpha,2\beta+\gamma,\gamma$下的矩阵
+\begin{description}
+\item[解]
+\[
+\mathcal{A}^{-1}\left(
+\begin{array}{c}
+\alpha \\
+\beta \\
+\gamma \\
+\end{array}\right) = A^{-1} \left(
+\begin{array}{c}
+\alpha \\
+\beta \\
+\gamma \\
+\end{array}\right)
+\]
+用$B$表示两个基之间的过渡矩阵
+\[
+\left(
+\begin{array}{c}
+\alpha \\
+2\beta+\gamma \\
+\gamma \\
+\end{array}\right) = B \left(
+\begin{array}{c}
+\alpha \\
+\beta \\
+\gamma \\
+\end{array}\right)
+\]
+又把$\mathcal{A}(\alpha,\beta,\gamma)^T$看成一个整体，这个转置不转内部向量
+\[
+\mathcal{A}\left(
+\begin{array}{c}
+\alpha \\
+2\beta+\gamma \\
+\gamma \\
+\end{array}\right) = B\mathcal{A}\left(
+\begin{array}{c}
+\alpha \\
+\beta \\
+\gamma \\
+\end{array}\right) = AB \left(
+\begin{array}{c}
+\alpha \\
+\beta \\
+\gamma \\
+\end{array}\right)
+\]
+\end{description}
+
+
+\item 已知
+\[
+A = \left(
+\begin{array}{ccc}
+2 & 2 & -2 \\
+2 & 5 & -4 \\
+-2 & -4 & 5 \\
+\end{array}\right)
+\]
+\begin{description}
+\item[(1)] 求$A$的特征多项式，并确定其是否有重根
+\item[(2)] 求正交矩阵$P$，使得$PAP^{-1}$为对角矩阵
+\item[(3)] 令$V$是所有与$A$可交换的实矩阵全体，证明$V$是一个实数域上的线性空间，并确定$V$的维数
+\item[解(1)] $f(x)=(x-1)^2(x-10)$
+\item[解(3)] $A=PDP^{-1}$，又$AB=BA$，即$PDP^{-1}PCP^{-1}=PCP^{-1}PDP^{-1}$，即$CD=DC$，然后$B=PCP^{-1}$
+\end{description}
+
+\item 设$A,B$是两个$n$阶复方阵，$n>1$
+\begin{description}
+\item[(1)] 如果$AB=BA$，证明$A,B$有公共的特征向量
+\item[(2)] 如果$AB-BA=\mu B$，其中$\mu$是非零复数，那么$A,B$是否会有公共的特征向量
+\item[证(1)] 对于$A$的特征值$\lambda$有特征子空间$V_{\lambda}$，由于$AB=BA$，所以$V_{\lambda}$是$B$的不变子空间，$B|V_{\lambda}$有特征值$\mu$，而$\mu$有特征子空间$V_{\mu}$，故可取$\xi\in V_{\mu}$
+\item[证(2)] 归纳法证$AB^k-B^kA=k\mu B^k$，$\tr(k\mu B^k)=\tr(AB^k-B^kA)=0$，故$B$为幂零矩阵。取$\xi \in \ker B$，有$AB\xi-BA\xi=\mu B\xi$，即$A\xi \in \ker B$。此时在$\ker B$中有特征值，有特征向量，如上题证
+\end{description}
+
+\item 设$A$是$n$阶实方阵，其特征多项式有如下分解
+\[
+p(\lambda) = \det(\lambda E-A)=(\lambda-\lambda_1)^{r_1}(\lambda-\lambda_2)^{r_2}\dots(\lambda-\lambda_s)^{r_s}
+\]
+其中$E$为$n$阶单位方阵，$\lambda_i$两两不等，证明$A$的若当标准型中以$\lambda_i$为特征值的若当块的个数等于特征子空间$V_{\lambda_i}$的维数
+\begin{description}
+\item[证] 设$A$的若当标准型为
+\[
+J = \left(
+\begin{array}{cc}
+J_{\lambda_i} & \\
+ & B \\
+\end{array}\right)
+\]
+其中$\lambda_i$不是$B$的特征值
+\[
+J_{\lambda_i} = \left(
+\begin{array}{ccc}
+J_1 & & \\
+ & \ddots & \\
+ & & J_t\\
+\end{array}\right),J_i = \left(
+\begin{array}{cccc}
+\lambda_i & 1 & & \\
+ & \lambda_i & \ddots & \\
+ & & \ddots & 1 \\
+ & & & \lambda_i \\
+\end{array}\right)
+\]
+\end{description}
+
+\item 设$A$是$n$阶实方阵，证明$A$为实对称矩阵当且仅当$AA^T=A^2$
+\begin{description}
+\item[证] 若$\tr(AA^T)=0$，则$A$为零矩阵。证$\tr((A-A^T)(A-A^T)^T)=0$即可
+\end{description}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}

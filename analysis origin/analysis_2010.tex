@@ -1,0 +1,124 @@
+\section{2010数分}
+\begin{enumerate}
+\item 计算
+\begin{description}
+\item[(1)]
+\[
+\lim_{x \to 0}\frac{\int_0^{\sin^2x}\ln(1+t)\ud t}{\sqrt{1+x^4}-1}
+\]
+\item[(2)]
+\[
+\iint_{|x|+|y|\leq 1}|xy|\ud x\ud y
+\]
+\item[解(1)] 非常明显的洛必达
+\[
+= \lim_{x \to 0}\frac{\ln(1+\sin^2x)2\sin x\cos x}{\frac{1}{2}(1+x^4)^{-\frac{1}{2}}4x^3}
+\]
+\end{description}
+
+\item 证明
+\begin{description}
+\item[(1)] 令
+\[
+f(x) =
+\begin{cases}
+x^2\sin\frac{1}{x} & x\neq0,\\
+0 & x=0\\
+\end{cases}
+\]
+求$f'(0)$，并证明$f'(x)$在$x=0$处不连续
+\item[(2)] 若$\lambda = \sum_{k=1}^n \frac{1}{k}$，证明$e^{\lambda}>n+1$
+\item[证(1)]
+\[
+f'(0) =\lim_{x\to 0} \frac{x^2\sin\frac{1}{x}-0}{x-0} =\lim_{x\to 0} x\sin\frac{1}{x}=0
+\]
+$f'(x)$在$x=0$处不连续很明显
+\[
+\lim_{x\to 0} f'(x) = \lim_{x\to 0} 2x\sin\frac{1}{x}+\cos\frac{1}{x}\neq f'(0)
+\]
+\item[证(2)] 很明显的归纳法
+\end{description}
+
+\item 若$f(x)$在$[0,1]$上连续，在$(0,1)$上二次可微，并且$f(0)=f(\frac{1}{4})=0$，以及$\int_{\frac{1}{4}}^1 f(y)\ud y=\frac{3}{4}f(1)$，证明$\exists \xi \in (0,1)$，使得$f''(\xi)=0$
+\begin{description}
+\item[证] 左边中值定理有$\frac{3}{4}f(\eta_1)=\frac{3}{4}f(1)$，接着找到$f'(\eta_2)=0$，又$f(0)=f(\frac{1}{4})$可以找到$f'(\eta_3)=0$，最后由$f'(\eta_3)=f'(\eta_2)=0$得$f''(\xi)=0$
+\end{description}
+
+\item 求级数$\sum_{n=1}^{\infty}\frac{n}{(n+1)!}$的和
+\begin{description}
+\item[解] 加一减一之后用幂级数
+\end{description}
+
+\item 证明
+\[
+\frac{2n}{3}\sqrt{n}<\sum_{k=1}^n\sqrt{k}<\left(\frac{2n}{3}+\frac{1}{2}\right)\sqrt{n}
+\]
+\begin{description}
+\item[证] 见数学分析中的典型问题和方法P51。另，证左边，由拉格朗日中值定理，$\forall k \in \mathbb{N},\exists \xi_k\in(k-1,k),\st$
+\[
+\int_{k-1}^k \frac{3}{2}x^\frac{1}{2}\ud x = k^\frac{3}{2}-(k-1)^\frac{3}{2}=\frac{3}{2}\xi_k^\frac{1}{2}<\frac{3}{2}k^\frac{1}{2}
+\]
+求和有左边成立。右边用数学归纳法。又见数学分析中的典型问题和方法P273，这里有通过拉格朗日公式差成两项的方法
+\end{description}
+
+\item 计算
+\[
+\iiint_V (x^3+y^3+z^3)\ud x \ud y \ud z
+\]
+其中$V$表示曲面$x^2+y^2+z^2-2a(x+y+z)+2a^2=0(a>0)$所围成的区域
+
+\item 应用Green公式计算积分
+\[
+I=\oint_L \frac{e^x(x\sin y-y\cos y)\ud x + e^x(x\cos y-y\sin y)\ud y}{x^2+y^2}
+\]
+其中$L$是包围原点的简单光滑闭曲线，逆时针方向
+
+\item 设$f(x)$定义在$(-\infty,\infty)$上，且在$x=0$连续，并且对所有$x,y\in (-\infty,\infty)$，有$f(x+y) = f(x)+f(y)$，证明$f(x)$在$(-\infty,\infty)$上连续，且$f(x)=f(1)x$
+
+\item 证明
+\[
+\int_0^1 \frac{\ud x}{x^x}=\sum_{n=1}^{\infty} \frac{1}{n^n}
+\]
+
+\item 设$f(x)$在$[0,1]$上连续且$f(x)>0$，讨论函数
+\[
+g(y)=\int_0^1\frac{yf(x)}{x^2+y^2}\ud x
+\]
+在$(-\infty,\infty)$上的连续性
+\begin{description}
+\item[证] 数学分析精选习题全解上P277的278，也可以参考数学分析中的典型问题和方法P317
+\end{description}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}

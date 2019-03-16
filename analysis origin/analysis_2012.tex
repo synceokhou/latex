@@ -1,0 +1,111 @@
+\section{2012数分}
+\begin{enumerate}
+\item 计算极限
+\begin{description}
+\item[(1)]
+\[
+\lim_{n \to \infty} n^3\left(2\sin\frac{1}{n}-\sin\frac{2}{n} \right)
+\]
+\item[(2)]
+\[
+\lim_{n \to \infty} \left(\sqrt{\cos\frac{1}{x^2}}\right)^{x^4}
+\]
+\item[解(1)] 用$x=\frac{1}{n}$代换后能用洛必达
+\[
+=\lim_{x \to 0} \frac{2\sin x-\sin 2x}{x^3}
+\]
+\item[解(2)] 用$x=\frac{1}{x}$代换后，取对数，能用洛必达
+\[
+=\lim_{x \to 0} \frac{\ln (\cos x^2)}{2x^4}
+\]
+\end{description}
+
+\item 计算积分
+\begin{description}
+\item[(1)]
+\[
+I=\int_0^{\frac{\pi}{2}} \frac{\ud x}{1+\tan^3 x}
+\]
+\item[(2)]
+\[
+J=\iint_S x(1+yf(x^2+y^2))\ud x \ud y
+\]
+其中$S$为曲线$y=x^3,y=1,x=-1$所围成的区域，$f(x)$为实值连续函数
+\item[解(1)] 取代换$t = \frac{\pi}{2} - x$，然后两个加起来变1了
+
+\end{description}
+
+\item 求下列幂级数的收敛域
+\[
+\sum_{n=1}^{\infty} \frac{x^n}{1+\frac{1}{2}+\cdots +\frac{1}{n}}
+\]
+\item[解] 求出来收敛半径之后，要看收敛区间是闭还是开，正一的时候是调和级数，负一还是调和级数？
+
+\item 证明函数列$s_n(x)=\frac{x}{1+n^2+x^2}(n>1)$在开区间$(-\infty,+\infty)$上一致收敛；函数列$t_n(x)=\frac{nx}{1+n^2+x^2}(n>1)$在开区间$(0,1)$上不一致收敛
+
+\item 设在区间$[a,b]$上，$f(x)$连续，$g(x)$可积，并且$f(x)>0,g(x)>0$，证
+\[
+\lim_{n \to \infty} \left(\int_a^b f^n(x)g(x)\ud x \right)^{\frac{1}{n}} = \max_{a\leq x\leq b}f(x)
+\]
+\begin{description}
+\item[证] 见数学分析精选习题全解上P216的223
+\end{description}
+
+\item 设在区间$[0,a]$上，$f(x)$二次可导，并且$|f(x)|\leq 1,|f''(x)|\leq 1$，则当$x\in [0,a]$时，$|f'(x)|\leq \frac{2}{a}+\frac{a}{2}$
+\begin{description}
+\item[证] 直接泰勒展开
+\begin{eqnarray*}
+f(x-h) &=& f(x)-hf'(x) +\frac{h^2}{2}f''(\xi)\\
+f(x+h) &=& f(x)+hf'(x) +\frac{h^2}{2}f''(\eta)
+\end{eqnarray*}
+两式相减
+\begin{eqnarray*}
+f(x+h) - f(x-h) = 2hf'(x) +\frac{h^2}{2}[f''(\xi)-f''(\eta)]\\
+2hf'(x) = f(x+h)- f(x-h) -\frac{h^2}{2}[f''(\xi)-f''(\eta)]\\
+2h|f'(x)| \leq |f(x+h)|+ |f(x-h)| +\frac{h^2}{2}(|f''(\xi)|+|f''(\eta)|)
+\end{eqnarray*}
+其中$h<a,|f(x)|\leq 1,|f''(x)|\leq 1$
+\end{description}
+
+\item 设$n$是一个正整数，证$x^n+nx-1=0$有唯一正实根$x_n$，并且当$\alpha>1$时，级数$\sum_{n=1}^{\infty}x_n^{\alpha}$收敛
+\begin{description}
+\item[解] 令$f(x)=x^n+nx-1$，则$f(0)=-1,f(1)=n$，然后求导得单调增。$nx-1=-x^n>0$然后得$x<\frac{1}{n}$最后用大M判别法
+\end{description}
+
+\item 设$\omega(x,y,z)$是原点$O$到椭球面$\frac{x^2}{2}+\frac{y^2}{2}+z^2=1$的上半部分（满足$z\geq 0$)$\Sigma$的任一点$(x,y,z)$处的切面的距离，求积分
+\[
+\iint_{\Sigma}\frac{z}{\omega(x,y,z)}\ud S
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}

@@ -1,0 +1,140 @@
+\section{2010高代}
+\begin{enumerate}
+\item 设$A,B$分别是$n\times m$和$m\times n$矩阵
+\begin{description}
+\item[(1)] 求证$|I_n-AB|=|I_m-BA|$
+\item[(2)] 计算行列式
+\[
+D_n = \left[
+\begin{array}{cccc}
+1+a_1+x_1 & a_1+x_2 & \cdots & a_1+x_n\\
+a_2+x_1 & 1+a_2+x_2 & \cdots & a_2+x_n \\
+\vdots & \vdots & \vdots & \vdots \\
+a_n+x_1 & a_n+x_2 & \cdots & 1+a_n+x_n \\
+\end{array}\right]
+\]
+\item[证(1)] 见高等代数上P198命题2
+\item[证(2)]
+\[
+D_n = \left[I+\left(
+\begin{array}{cc}
+a_1 & 1\\
+a_2 & 1\\
+\vdots & \vdots\\
+a_n & 1\\
+\end{array}\right)\left(
+\begin{array}{cccc}
+x_1 & x_2 & \cdots & x_n \\
+1 & 1 & \cdots & 1 \\
+\end{array}\right)
+\right]
+\]
+\end{description}
+
+\item 已知3阶正交矩阵$A$的行列式为$1$，求证$A$的特征多项式一定为$f(\lambda)=\lambda^3-a\lambda^2+a\lambda-1$，其中$a\in \mathbf{R}$且$-1 \leq a\leq 3$
+\begin{description}
+\item[证] 在高等代数上P302的3
+\[
+|I-A|=|A'||I-A|=|-(I-A)|
+\]
+3阶，所以1为一个特征值
+\[
+T^{-1}AT=\left(
+\begin{array}{cc}
+1 & \alpha\\
+0 & A_2\\
+\end{array}
+\right) = D_2
+\]
+然后证$\alpha=0$和$A_2$为正交阵
+\[
+D_2D_2^T=\left(
+\begin{array}{cc}
+1+\alpha\alpha^T & \alpha A_2^T\\
+A_2\alpha^T & A_2A_2^T\\
+\end{array}
+\right)
+\]
+然后再找$A_2$长啥样，最后可以求原式
+\end{description}
+
+
+\item 设$A,B$是$n$阶方阵，$A$可逆，$B$幂零，$AB=BA$
+\begin{description}
+\item[(1)] 求证$A+B$可逆
+\item[(2)] 举例说明使上结论成立，$AB=BA$不可缺
+\item[证(1)] 高等代数下P290例5，然后就两个矩阵特征值相加，注意这两个上三角阵的对角线都是特征值
+\end{description}
+
+\item 任意$n$阶实方阵$A$的特征向量也是其伴随矩阵$A^*$的特征向量
+\begin{description}
+\item[证] 分类讨论，对于$\rank(A)=n,\rank(A)<n-1$的情况很简单，下面看$\rank(A)=n-1,\rank(A^*)=1$，设
+\[
+A^*=\left(
+\begin{array}{cccc}
+a & b_2a & \cdots & b_na \\
+c_2a & b_2c_2a & \cdots & b_nc_2a \\
+\vdots & \vdots &\ddots & \vdots \\
+c_na & b_2c_na & \cdots & b_nc_na \\
+\end{array}
+\right)=a\left(
+\begin{array}{c}
+c_1\\
+c_2\\
+\vdots\\
+c_n
+\end{array}
+\right)\left(
+\begin{array}{cccc}
+b_1 & b_2 & \cdots & b_n \\
+\end{array}
+\right)=aCB^T
+\]
+然后$A^*$的特征值为$\lambda_1=a\sum b_ic_i$，现在取$A$的特征向量$\xi$，对应的特征值为$\lambda$，有$\lambda A^*\xi = A^*\lambda\xi = A^*(A\xi)=0\xi$，如果$\lambda=0,A^*\xi\neq =0$（另外两种情况自己考虑），则$A\xi=0\xi$，由$AA^*=0$，则$C$为$A$属于特征值$0$的特征向量，因为$\rank(A)=n-1$，$A$特征值$0$是单根，故$\xi=kC,k\neq 0$，所以$A^*\xi=kA^*C=ak\sum b_ic_iC$
+\end{description}
+
+\item $n$阶方阵$A$能表示成$A=H+K$，其中$H=\bar{H}^T,K=-\bar{K}^T$，设$a,h,k$分别是$A,H,K$中元素的最大模，若$z=x+iy(x,y\in \mathbf{R})$是$A$的任意特征值，求证
+\begin{description}
+\item[(1)] $|z|\leq na,|x|\leq nh,|y|\leq nk$
+\item[(2)] Hermite的矩阵的特征值都是实数
+\item[(3)] 反对称矩阵的非零特征值都是纯虚数
+\item[证(1)] $A\xi=z\xi$其中$\xi=(\epsilon_1,\epsilon_2,\cdots,\epsilon_n)^T,\epsilon_{max}=|\epsilon_k|=\max\{|\epsilon_1|,|\epsilon_2|,\cdots,|\epsilon_n|\}$，则$|z\epsilon_k|=|z||\epsilon_k|=|a_{k1}\epsilon_1+a_{k2}\epsilon_2+\cdots+a_{kn}\epsilon_n|\leq n|\epsilon_k|a$，然后通过$A\xi=H\xi+K\xi=x\xi+iy\xi$和$\bar{K}^T=-K,\bar{H}^T=H$得到$\bar{\xi}^T(H-xI_n)\xi=\bar{\xi}^T(-K+iyI_n)\xi=0$
+\end{description}
+
+\item 设$\mathcal{A}$是$n$维实线性空间$V$的线性变换，求证$\mathcal{A}$至少有一个维数为$1$或$2$的不变子空间
+\begin{description}
+\item[证] 在实数域上有特征值，那就有维数为$1$的不变子空间。若无，转到复数域，必有两互补的特征值，求出特征值向量再生成维数为$2$的不变子空间
+\end{description}
+
+\item 设循环矩阵$C$为
+\[
+\left(
+\begin{array}{cccc}
+c_0 & c_1 & \cdots & c_{n-1} \\
+c_{n-1} & c_0 & \cdots & c_{n-2} \\
+\vdots & \vdots & \ddots & \vdots\\
+c_1 & c_2 & \cdots & c_0 \\
+\end{array} \right)
+\]
+\begin{description}
+\item[(1)] 求$C$的所有特征值以及相应的特征向量
+\item[(2)] 求$|C|$
+\item[证(1)] 见高等代数上P279例13
+\end{description}
+
+\item 设$M_n(\mathbf{C})$是复数域上所有$n$阶方阵组成的线性空间，$\tau:M_n(\mathbf{C})\rightarrow \mathbf{C}$是线性映射，满足$\tau(AB)=\tau(BA)$，求证$\forall A \in M_n(\mathbf{C}),\exists \lambda \in \mathbf{C}$使得$\tau(A) = \lambda\cdot\tr(A)$
+\begin{description}
+\item[证] $T(AB-BA)=0$，故有$T(E_{ij}E_{ji}-E_{ji}E_{ij})=0=T(E_{ii}-E_{jj})$，又有$T(E_{ij})=T(E_{ii}E_{ij}-E_{ij}E_{ii})=0$
+\end{description}
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}

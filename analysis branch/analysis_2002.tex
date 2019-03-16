@@ -1,0 +1,163 @@
+\section{2002数分}
+\begin{enumerate}
+\item 计算
+\[
+\lim_{x\to \infty}\left(\frac{1}{x}\frac{a^x-1}{a-1}\right)^{\frac{1}{x}} (a>0,a\neq 1)
+\]
+\begin{description}
+\item[解] 用exp和ln的方法，后面要注意分类讨论$a>1$或$0<a<1$
+\end{description}
+
+\item 设$f$是二次连续可微函数，$f(0)=0$，定义函数
+\[
+g(x) = \begin{cases}
+f'(0) & x=0 \\
+\frac{f(x)}{x} & x\neq 0
+\end{cases}
+\]
+证明$g$连续可微
+\begin{description}
+\item[证] 首先证连续
+\[
+\lim_{x\to 0}g(x)=\lim_{x\to 0}\frac{f(x)-f(0)}{x}=f'(0)=g(0)
+\]
+再证可微，先用定义求出$g'(0)$，再通过$g(x)$趋向零看看是不是相等
+\end{description}
+
+\item 证明
+\begin{description}
+\item[(1)] 设$\sum_{n=1}^{\infty} a_n$是收敛的正项级数，则当$\alpha>\frac{1}{2}$时
+\[
+\sum_{n=1}^{\infty} \frac{\sqrt{a_n}}{n^{\alpha}}
+\]
+收敛
+\item[(2)] 证明
+\[
+\sum_{n=1}^{\infty}n^{-\frac{n+1}{n}}
+\]
+发散
+\item[证(1)]
+\[
+\frac{\sqrt{a_n}}{n^{\alpha}}\leq\frac{1}{2}\left(a_n+\frac{1}{n^{2\alpha}}\right)
+\]
+\item[证(2)]
+\[
+\lim_{n\to\infty}\frac{n^{-\frac{n+1}{n}}}{n^{-1}}=\lim_{n\to \infty}n^{-\frac{1}{n}}=1
+\]
+\end{description}
+
+\item 计算
+\begin{description}
+\item[(1)]
+\[
+\int_0^{2\pi} \sqrt{1+\cos x}\ud x
+\]
+\item[(2)]
+\[
+\int_0^{\pi}\frac{x\sin x}{1+\cos^2x}\ud x
+\]
+\item[解(1)]
+\begin{eqnarray*}
+&=& \int_0^{2\pi} \sqrt{2\cos^2\frac{x}{2}}\ud x\\
+&=& 2\sqrt{2}\int_0^{\pi} |\cos t|\ud t\quad(t=\frac{x}{2})
+\end{eqnarray*}
+\item[解(2)] $t=x=\frac{\pi}{2}$
+\begin{eqnarray*}
+&=& \int_{-\frac{\pi}{2}}^\frac{\pi}{2}\frac{(\frac{\pi}{2}-t)\cos t}{1+\sin^2t}\ud t\\
+&=&\pi \int_0^\frac{\pi}{2}\frac{\cos t}{1+\sin^2t}\ud t
+\end{eqnarray*}
+注意到$t$乘一堆是中心对称，积分两边消掉，而$\frac{\pi}{2}$左右对称，拿出来乘二
+\end{description}
+
+\item 求$x^2+y^2+z^2=a^2(a>0)$被平面$z=\frac{a}{4}$和$z=\frac{a}{2}$所夹部分的曲面面积
+\begin{description}
+\item[解] 曲面面积，所以用x-o-y，柱坐标代换
+\end{description}
+
+\item 求$x+2y=1$和$x^2+2y^2+z^2=1$的交线上距原点最近的点
+\begin{description}
+\item[解] 条件极值经典题目？公式见南开大学数分中P114
+\end{description}
+
+\item 计算
+\begin{description}
+\item[(1)] 将$f(x)=x^2$在$(0,2\pi)$上展开成傅立叶级数
+\item[(2)] 利用以上结果计算
+\[
+\sum_{n=1}^{\infty}\frac{1}{n^2},\int_0^1\frac{\ln(1+x)}{x}\ud x
+\]
+\item[解(1)] 设
+\[
+f(x)\sim \frac{a_0}{2}+\sum_{n=1}^\infty(a_n\cos nx+b_n\sin nx)
+\]
+则
+\begin{eqnarray*}
+a_n&=&\frac{1}{\pi}\int_0^{2\pi}f(x)\cos nx\ud x\\
+b_n&=&\frac{1}{\pi}\int_0^{2\pi}f(x)\sin nx\ud x\\
+\end{eqnarray*}
+公式在这里，自己算
+\item[解(2)] 前者，取$x=0$，后者
+\begin{eqnarray*}
+&=& \int_0^1\sum_{n=0}^\infty(-1)^n\frac{x^n}{n+1}\ud x\\
+&=& \sum_{n=0}^\infty(-1)^n\frac{1}{(n+1)^2}\\
+&=& \sum_{n=0}^\infty\frac{1}{(2n+1)^2}-\sum_{n=1}^\infty\frac{1}{(2n)^2}\\
+&=& \sum_{n=1}^\infty\frac{1}{n^2}-2\sum_{n=1}^\infty\frac{1}{(2n)^2}\\
+\end{eqnarray*}
+\end{description}
+
+\item 设$a_{n+1}=a_n+\frac{1}{a_n}(n>1),a_1=1$，则
+\begin{description}
+\item[(1)] $\lim_{n \to \infty} a_n = +\infty$
+\item[(2)]
+\[
+\sum_{n=1}^{\infty} \frac{1}{a_n} = +\infty
+\]
+\item[证(1)] $\{a_n\}$单调递增，若其有上界，则有极限为$a$
+\[
+a=a+\frac{1}{a}\Rightarrow a=\infty
+\]
+矛盾
+\item[证(2)]
+\[
+\sum_{n=1}^{\infty} \frac{1}{a_n} =\lim_{k\to\infty}\sum_{n=1}^{k} (a_{n+1}-a_{n}) =\infty
+\]
+\end{description}
+
+
+\item 设$f$在$[0,\infty)$上连续可微，并且$\int_0^{\infty}f^2(x)\ud x<\infty$。如果$|f'(x)|\leq C(x>0)$，其中$C$为一常数，证$\lim_{x \to \infty}f(x)=0$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}

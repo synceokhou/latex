@@ -1,0 +1,120 @@
+\section{2011数分}
+\begin{enumerate}
+\item 计算或证明极限
+\begin{description}
+\item[(1)]
+\[
+\lim_{x \to \infty}(\frac{1}{x}+2^\frac{1}{x})^x
+\]
+\item[解] 用$x=\frac{1}{x}$代换后，取对数，能用洛必达
+\[
+= \lim_{x \to 0}\frac{\ln(x+2^x)}{x}
+\]
+\item[(2)]
+\[
+\lim_{n \to \infty}\int_0^1 \ln(1+x^n)\ud x
+\]
+\item[解] 令$\eta + \epsilon=1$，则$\int_0^1 \ln(1+x^n)\ud x = \int_0^\eta \ln(1+x^n)\ud x+\int_\eta^{\eta+\epsilon} \ln(1+x^n)\ud x$，而$int_\eta^{\eta+\epsilon} \ln(1+x^n)\ud x<int_\eta^{\eta+\epsilon} \ln(1+1)\ud x=\epsilon \ln 2$，另一个$\int_0^\eta \ln(1+x^n)\ud x<\int_0^\eta \ln(1+\eta^n)\ud x=\eta\ln(1+\eta^n)$，剩下跑极限你懂
+
+\item[(3)] 证明
+\[
+\lim_{x \to 0}\left(\frac{2-e^{\frac{1}{x}}}{1+e^{\frac{2}{x}}}+\frac{x}{|x|}\right)
+\]
+存在，并求值
+\item[解] 分类讨论，$x\to 0^+,\frac{1}{x} \to +\infty,x\to 0^-,\frac{1}{x} \to -\infty$，前者
+\[
+\frac{\frac{2}{e^{\frac{1}{x}}}-1}{\frac{1}{e^{\frac{1}{x}}}+e^{\frac{1}{x}}}=\frac{0-1}{0+\infty}
+\]
+后者
+\[
+\frac{2-0}{1+0}
+\]
+那个$\frac{x}{|x|}$后面补加上去
+\end{description}
+
+\item 求数列$1,\sqrt{2},\sqrt[3]{3},\cdots,\sqrt[n]{n}$中最大的一项
+\begin{description}
+\item[解]
+\[
+y=\sqrt[x]{x} = \exp\{\frac{\ln x}{x}\}
+\]
+其中$e^x$单调增，考虑$g(x)=\frac{\ln x}{x}$即可
+\[
+g'(x) = \frac{\frac{1}{x}x-\ln x}{x^2}
+\]
+此时又只用考虑$1-\ln x=0$即可，即$x=e$，故只需比较$n=2$和$n=3$的值
+\end{description}
+
+\item 设函数$f(x)$满足，$f''(x)<0(x>0),f(0)=0$。证明$\forall x_1 >0,x_2>0$有
+\[
+f(x_1+x_2)<f(x_1)+f(x_2)
+\]
+\begin{description}
+\item[证] 不妨设$x_1<x_2$
+\[
+\frac{f(x_1+x_2)-f(x_2)}{x_1+x_2-x_2} < \frac{f(x_1)-f(0)}{x_1-0}
+\]
+由于$f'$单调减
+\end{description}
+
+\item 设函数$f(x)$在$[0,\infty)$内有界可微，试问下列命题哪个必定成立（理由），哪个不成立（反例）
+\begin{description}
+\item[(1)] $\lim_{x \to \infty}f(x)=0\Rightarrow \lim_{x \to \infty}f'(x)=0$
+\item[(2)] $\lim_{x \to \infty}f'(x) $存在$\Rightarrow \lim_{x \to \infty}f(x)=0$
+\item[证(1)] 数学分析中的典型问题和方法P259的例3.3.11那样展开
+\[
+f(x+h) = f(x) + hf'(\xi) \Rightarrow \frac{f(x+h) - f(x)}{h} = f'(x)
+\]
+$\forall h>0,x\to \infty \st f'(x)=0$
+\item[证(2)] 反例$f'(x)=1$
+\end{description}
+
+\item 过$y=x^2$上的一点$(a,a^2)$作切线，确定$a$使得该切线与$y=-x^2+4x-1$所围的图形面积最小，并求该值
+\begin{description}
+\item[解] 先求切线的表达式，然后$y_1-y_2$积横坐标
+\end{description}
+
+\item 计算%\oint\varoiint
+\[
+\oint_C \left((x+1)^2+(y-2)^2\right)\ud s
+\]
+其中$C$表示$x^2+y^2+z^2=1$与$x+y+z=1$的交线
+\begin{description}
+\item[解] 拆开然后对称性？
+\end{description}
+
+
+\item 设函数列$\{f_n(x)\}_{n\geq 0}$在区间$I$上一致收敛，而且对每个$n\geq 0$，$f_n(x)$在$I$上有界。证明函数列$\{f_n(x)\}_{n\geq 0}$在$I$上一致有界，即$\exists M>0,\forall n\geq0,x\in I$有$|f_n(x)|\leq M$
+
+\item 设$\{a_k\}_{k\geq 0},\{b_k\}_{k\geq 0},\{\xi_k\}_{k\geq 0}$为非负数列，而且$\forall k\geq 0$，有$a_{k+1}^2\leq (a_k+b_k)^2-\xi_k^2$
+\begin{description}
+\item[(1)] 证明$\sum_{i=1}^k\xi_i^2\leq \left(a_1+\sum_{i=0}^kb_i \right)^2$
+\item[(2)] 若$\{b_k\}$还满足$\sum_{k=0}^{\infty}b_k^2<+\infty$，则$\lim_{k\to \infty}\frac{1}{k}\sum_{i=1}^k\xi_i^2=0$
+\end{description}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}

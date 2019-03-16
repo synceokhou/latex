@@ -1,0 +1,104 @@
+\begin{itemize}
+\item 已知
+\[
+\begin{cases}
+x_{n+1}=x_n+4y_n\\
+y_{n+1}=2x_n+y_n
+\end{cases}
+\]
+且$x_0=1,y_0=0$，求$x_{100},y_{100}$
+\begin{description}
+\item[解]
+\[
+\left(
+\begin{array}{c}
+x_{n+1}\\
+y_{n+1}\\
+\end{array}
+\right) = \left(
+\begin{array}{cc}
+x_n & 4y_n\\
+2x_n & y_n\\
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+x_{n}\\
+y_{n}\\
+\end{array}
+\right)
+\]
+所以剩下的问题就是变成对角型
+\end{description}
+
+\item 设$A,B$为同阶对称正定阵，若$A>B$（即$A-B$为正定阵），试问是否一定有$A^2>B^2$？为什么？
+\begin{description}
+\item[证] 因为$A,B$为同阶对称正定阵，故存在正交阵$P$，使得$A,B$为对角型，然后剩下的你都懂了。注意左边的解法是错的，原因是$B$的特征向量不一定是$A$的特征向量。其实可以设$B$是对角阵
+\[
+A = \left(
+\begin{array}{cc}
+a_1 & a_2\\
+a_2 & a_4\\
+\end{array}
+\right),B = \left(
+\begin{array}{cc}
+b_1 & 0\\
+0 & b_4\\
+\end{array}
+\right)
+\]
+$|A-B|=(a_1-b_1)(a_4-b_4)-a_2^2$,$|A^2-B^2|=(a_1^2+a_2^2-b_1^2)(a_2^2+a_4^2-b_4^2)-(a_2^2+a_1a_4)^2$，太多变量了，可以随便弄矩阵满足$A^2-B^2$半负定
+\end{description}
+
+\item 证明若$S$为$n$阶对称正定阵，则
+\begin{description}
+\item[(1)] 存在唯一的对称正定矩阵$S_1$，使得$S=S_1^2$
+\item[(2)] 若$A$是$n$阶实对称矩阵，则$AS$的特征值是实数
+\item[证(1)] 存在性就是开根号，唯一性见高等代数上6.3例7
+\item[证(2)] 因为$A$是$n$阶实对称矩阵，$AS$还是对称阵
+\end{description}
+
+\item 设$A=(a_{ij})$是$2004$阶方阵，且$a_{ij}=ij,1\leq i,j\leq 2004$，$I$是$2004$阶单位阵，计算$f(x)=\det(I+Ax),x\in \mathbf{R}$
+\begin{description}
+\item[解] 猥琐解法，分类$x=0$，$f(0)=1$，$x\neq 0$，$f(x)=x^n\det(\frac{1}{x}I+A)$，这里就是$A$的特征多项式
+\end{description}
+
+\item 令$f(x,y)=2x^2-7xy+y^2$。求$f(x,y)$在$\mathbf{R}^2$中单位圆上的极大值与极小值及极值点
+\begin{description}
+\item[解] 单位圆，$(x,y)$考虑单位向量。也就是单位特征向量，以及最大最小特征值
+\end{description}
+
+\item 设$A,B$是$n$阶实方阵，而$I$是$n$阶单位阵。证若$I-AB$可逆，则$I-BA$也可逆
+\begin{description}
+\item[解] 就是行列式值，打洞
+\end{description}
+
+\item 设$A$为$n \times n$阶实对称矩阵，$b$为$n\times 1$维实向量，证明$A-bb^T>0$的充分必要条件是$A>0$及$b^TA^{-1}b<1$
+\begin{description}
+\item[解] 就又是打洞
+\end{description}
+
+\item 设$V$是$n$维向量空间，$f,g$是$V$上的线性变换，且$f$有$n$个互异的特征根。证$fg=gf$的充要条件是$g$是$I,f,f^2,\cdots,f^{n-1}$的线性组合
+\begin{description}
+\item[解] $\Rightarrow$显然，下面证$\Leftarrow$。在一组基下，$A$为有$n$个互异特征根的对角矩阵，由高等代数上4.2例1可知，$B$也为对角矩阵。显然$\dim(B)=n$，故只需证$f^i$线性无关
+\end{description}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{itemize}

@@ -1,0 +1,67 @@
+\section{2008数分}
+\begin{enumerate}
+\item 设$f(x)\in C[0,1]$，证
+\begin{description}
+\item[(1)] $\exists x_0 \in [0,1]$，使得$\sin^2(\pi f(x_0))=x_0$
+\item[解(1)] $g(x) = \sin^2(\pi f(x)) - x,g(0)\geq 0,g(1)\leq 0$
+\item[(2)] 若$f(x)=x$，则$\sin^2(\pi x)=x$有且仅有三个根
+\item[解(2)] $g(0)=0$
+\end{description}
+
+\item 设$f(x,y)$是定义在$D=[0,1]\times [0,1]$上的实值连续函数，求证$g(x)=\sup\{f(x,y)|0\leq y \leq 1\}$在$[0,1]$上连续
+\begin{description}
+\item[证] 见数学分析中的典型问题和方法P139，都是上确界，看看有什么区别
+\end{description}
+
+\item 设函数$f(x)$在$[0,1]$上二阶可导且$f''(x)\geq 0$，证明$\int_0^1 f(x)\ud x\geq f(\frac{1}{2})$
+
+\item 设$\{x_n\},\{a_n\}$为两个非负无穷数列，满足$x_{n+1}\leq x_n +a_n$且$\sum_{n=1}^\infty a_n$收敛，证明$\lim_{n \to \infty}x_n$存在
+\begin{description}
+\item[证] $\{a_n\}$为非负无穷数列，那么$\{a_n\}$将渐渐趋向于零，这个可以由stolz证，也就是说，一旦$\{x_n\}$下降，它再次上升的空间越来越小，我们甚至可以断定如果趋势是下降的，那无话可说，有下界有极限，如果趋势是上升的，也只有最近一次下降之后的上升有意义。之前都是废话。可设$\exists M>0,\st \sum_{n=1}^\infty a_n \leq M$，因为$x_{n+1}\leq x_n +a_n$，所以$x_n-x_1=\sum_{k=1}^{n-1}(x_{k+1}-x_k)\leq \sum_{n=1}^\infty a_n \leq M$，从而$0\leq x_n\leq M+|x_1|$，说明$\{x_n\}$有界，有收敛子列，设$\{x_{n_k}\}$为一收敛子列，$x_{n_k}\to a$。找到$x_{n_{k-1}}-\epsilon<x_n<x_{n_{k}}+\epsilon$，另外有$|x_{n_{k}}-a|<\epsilon$和$|x_{n_{k+1}}-a|<\epsilon$，三个不等式合在一起就够了
+\end{description}
+
+\item 设实系数多项式序列$\{f_n(x)\}$在$\mathbf{R}$上一致收敛于实值函数$f(x)$，证明$f(x)$也是多项式
+
+\item 计算曲面积分$I=\iint_{\Sigma}(x^2+x^7y^2+z^3)\ud S$，其中$\Sigma$为$x^2+y^2+z^2=1$
+
+\item 证明
+\[
+I(r)=\int_0^{2\pi} \ln(1-2r\cos\theta+r^2)\ud \theta =
+\begin{cases}
+4\pi \ln r & r \geq 1,\\
+0 & 0\leq r <1
+\end{cases}
+\]
+\begin{description}
+\item[证] 见吉米多维奇数学分析习题集题解4P193[3049]
+\end{description}
+
+\item 设函数$f(x,y)$在$\mathbf{R}^2$上二阶连续可微，满足$f|_{\partial \Omega}=0,\partial \Omega=\{(x,y)|x^2+y^2=1\}$，及$\lim_{x \to +\infty}f(x,0)=1$，证明$\exists (x_0,y_0)$，使得$\Delta f|_{(x_0,y_0)}\geq 0$
+
+
+\item 设函数$f(x)$在$\mathbf{R}$上无穷次可微，且满足$f(0)=0,f'(0)\neq 0$。证明
+\begin{description}
+\item[(1)] $\exists \delta > 0$和定义在$(-\delta ,\delta)$上的可微函数$\psi(t)$，使得$f(\psi(t))=\sin t$
+\item[(2)] 求$\psi(t)$在$t=0$处的二阶泰勒展开式
+\end{description}
+
+\item 设定义在$\mathbf{R}$上的非负连续函数$f(x)$，满足$f(x)\leq\int_0^x[f(t)]^a\ud t$，证明
+\begin{description}
+\item[(1)] 当$a\geq 1$时，$f(x)=0$
+\item[(2)] 举例说明，当$0<a<1$时$f(x)$不一定恒为$0$
+\end{description}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}

@@ -1,0 +1,82 @@
+\begin{itemize}
+
+\item 设$A,B$为满秩方阵，试求
+\[
+Q=\left(
+\begin{array}{cc}
+A & C\\
+O & B \\
+\end{array}
+\right)
+\]
+的逆矩阵
+\begin{description}
+\item[解] 先打洞，然后乘各自逆矩阵
+\end{description}
+
+\item 设$a_1,a_2,\cdots,a_n$为$n$个实数，求
+\[
+A=\left(
+\begin{array}{cccc}
+a_1 & a_1 & \cdots & a_1 \\
+a_2 & a_2 & \cdots & a_2 \\
+\vdots & \vdots & \ddots & \vdots\\
+a_n & a_n & \cdots & a_n \\
+\end{array}
+\right)
+\]
+的所有特征值
+\begin{description}
+\item[解] 首先$\rank(A)=1$，故有$n-1$个特征值为0，另外$\tr(A)=\sum a_i$，所以最后一个特征值是$\tr(A)=\sum a_i$
+\end{description}
+
+\item 设$a,b,c,d$为正实数，求出满足$y \geq ax+b$与$y\geq -cx+d$之$y$的最小值
+\begin{description}
+\item[解] 画图然后解
+\end{description}
+
+\item 设$A,B$为方阵，且$B$为满秩阵，$s$为实数，$C=A+sB$，证$\exists a>0$，使得在$0<s<a$时，$C$满秩
+\begin{description}
+\item[解] $|C|=|AB^{-1}+sE|$其实是一个关于$s$的$n$次多项式，不妨设$a$是距离0最近的一个根，显然$|C|$在区间$(0,a)$不等于零
+\end{description}
+
+\item 设$\alpha_i=(a_{i1},a_{i2},\cdots,a_{in})^T,i=1,2,\cdots,m(\leq n)$为$n$维欧氏空间中的$m$个向量，有设$P=(p_{ij})_{1\leq i,j\leq m}$，其中$p_{ij}=\sum_{k=1}^n a_{ik}a_{jk}$，证$\alpha_1,\alpha_2,\cdots,\alpha_m$为线性无关的，当且仅当$P$为满秩
+\begin{description}
+\item[解] $A$线性无关$\Leftrightarrow A^TA$满秩，高等代数上4.3例3有结论$\rank(A'A)=\rank(A)$，$AX=0$的解是$A'AX=0$的解，$A'AX=0$的解是$X'A'AX=0$的解，而$X'A'AX=0$可知$AX=0$因为这个都是平方
+\end{description}
+
+\item 设$A,B$为对称方阵，证$\tr(ABAB)\leq \tr(AABB)$
+\begin{description}
+\item[解] 非常神奇的一个trick
+\[
+A=(\alpha_1,\cdots,\alpha_n) = A^T = \left(\begin{array}{c}
+\alpha_1\\
+\vdots\\
+\alpha_n\\
+\end{array}
+\right)
+\]
+同理可得$B$，然后$ABAB=A^TBA^TB$，$AABB=A^TAB^TB$
+\end{description}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{itemize}

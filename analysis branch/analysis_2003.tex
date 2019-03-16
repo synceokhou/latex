@@ -1,0 +1,139 @@
+\section{2003数分}
+\begin{enumerate}
+
+\item 设$A,B$为常数，求
+\[
+\lim_{x \to 0^+}\ln(e^{\frac{A}{x}}+e^{\frac{B}{x}})
+\]
+\begin{description}
+\item[解] 对称性，去一边，如$A\geq B$，再化简
+\[
+\lim_{x \to 0^+}\ln(e^{\frac{A}{x}}+e^{\frac{B}{x}}) = \lim_{x \to 0^+}\frac{A}{x}+\ln(1+e^\frac{B-A}{x})
+\]
+分类讨论，$A$是否等于零是一个分类，$B-A$的值是一另个分类
+\end{description}
+
+\item 确定$\lambda$取何值时函数
+\[
+f(x) = \begin{cases}
+x^{\lambda}\sin\frac{1}{x} & x\neq 0\\
+0 & x=0
+\end{cases}
+\]
+在点$x=0$处连续、可导、导数连续
+\begin{description}
+\item[证] 非常经典的一道函数题
+\end{description}
+
+\item 设$0<x<y<1$或$1<x<y$，则
+\[
+\frac{y}{x}< \frac{y^x}{x^y}
+\]
+\begin{description}
+\item[证] 数学分析中的典型问题和方法P295的3.4.14，$x^{y-1}>y^{x-1}$
+\[
+\frac{y-1}{\ln y}>\frac{x-1}{\ln x}
+\]
+只要证单调性就好，求导后只要证$g(x)=x\ln x-(x-1)\geq0$
+\[
+g'(x) = \begin{cases}
+<0 & x<1\\
+0 & x=1\\
+>0 & x>1
+\end{cases}
+\]
+故$g(x)\geq \min g(x)=g(1)=0$
+\end{description}
+
+\item 计算积分
+\[
+\int_0^{2\pi} \frac{\ud \theta}{2+\cos \theta}
+\]
+\begin{description}
+\item[证] 事实上是拆开，变量代换，把$cos$的区间往左移，此时$cos$的变号考虑清楚
+\begin{eqnarray*}
+\int_0^{\pi}+\int_{\pi}^{2\pi} \frac{\ud \theta}{2+\cos \theta}&=& \int_0^{\pi} \frac{\ud \theta}{2+\cos \theta}+\int_0^{\pi} \frac{\ud \theta}{2-\cos\theta}\\
+&=& \int_0^{\pi} \frac{4\ud \theta}{4-\cos^2 \theta}\\
+&=& \int_0^{\pi} \frac{4\ud \theta}{4\tan^2\theta+3}\\
+\end{eqnarray*}
+\end{description}
+
+\item 设$f(x)$在$[a,b]$上连续，在$(a,b)$内可导，且$f(a)=0,f(x)>0$，当$x\in(a,b]$，不存在常数$M>0$使$0\leq f'(x)\leq Mf(x)$，当$x\in(a,b]$
+\begin{description}
+\item[证] 反证，$\exists M>0$，则
+\[
+\frac{\ud(\ln f(x))}{\ud x}=\frac{f'(x)}{f(x)}\leq M
+\]
+在$(x,b]$上求积分，有$\ln f(b)-\ln f(x)\leq M(b-x)$，即$e^{\ln f(b)-M(b-x)}\leq f(x)$，又$f$连续，而$0<e^{\ln f(b)-M(b-a)}\leq f(a)=0$，矛盾
+\end{description}
+
+\item 计算
+\[
+\iiint_V \frac{2z}{\sqrt{x^2+y^2}}\ud v
+\]
+其中$V$是平面图形$D=\{(x,y,z)|x=0,y\geq 0,z\geq 0,y^2+z^2\leq 1,2y-z\leq 1\}$绕$z$轴旋转一周所生成的立体
+\begin{description}
+\item[证] 这是一个半球减去一个圆锥，用圆柱坐标，这样变成$r^2+z^2\leq 1$和$2r-z\leq 1$
+\end{description}
+
+\item 求
+\[
+\frac{x^2}{96}+y^2+z^2=1
+\]
+上距平面$3x+4y+12z=228$最近和最远的点
+\begin{description}
+\item[证] 曲面在$(x_0,y_0,z_0)$的法向量为$\nabla f(x_0,y_0,z_0)$，从平面方程也能取出法向量，两个一比，附带曲面方程，可以算出两点，然后代入距离公式
+\end{description}
+
+\item 设函数$f(x)$在$x=0$连续，并且
+\[
+\lim_{x\to x}\frac{f(2x)-f(x)}{x}=A
+\]
+求证$f'(0)$存在，并且$f'(0)=A$
+\begin{description}
+\item[证] $\forall \epsilon>0,\exists \delta>0,\st |x|<\delta$
+\[
+\left|\frac{f(2x)-f(x)}{x}-A\right|<\frac{\epsilon}{2}
+\]
+有
+\begin{eqnarray*}
+-\frac{\epsilon}{2}\cdot\frac{|x|}{2} &<f(x)-f(\frac{x}{2})-Ax<&\frac{\epsilon}{2}\cdot\frac{|x|}{2}\\
+-\frac{\epsilon}{2}\cdot\frac{|x|}{2^2} &<f(\frac{x}{2})-f(\frac{x}{2^2})-A\frac{x}{2}<&\frac{\epsilon}{2}\cdot\frac{|x|}{2^2}\\
+\end{eqnarray*}
+然后加起来
+\[
+-\frac{\epsilon}{2}\cdot|x|\cdot\sum_{k=1}^n\frac{1}{2^k} <f(x)-f(\frac{x}{2^n})-Ax\sum_{k=1}^n\frac{1}{2^k}<\frac{\epsilon}{2}\cdot|x|\cdot\sum_{k=1}^n\frac{1}{2^k}
+\]
+令$n\to \infty$得
+\[
+-\epsilon|x|<f(x)-f(0)-Ax<\epsilon|x|
+\]
+\end{description}
+
+
+\item 设$f(x)$是$[-1,1]$上的连续函数，则
+\[
+\lim_{y \to 0^+} \int_{-1}^1 \frac{yf(x)}{x^2+y^2}\ud x=\pi f(0)
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}

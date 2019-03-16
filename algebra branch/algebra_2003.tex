@@ -1,0 +1,107 @@
+\begin{itemize}
+\item 已知
+\[
+A=\left(
+\begin{array}{ccc}
+1 & 0 & a\\
+0 & 1 & b \\
+c & d &1 
+\end{array}
+\right)
+\]
+\begin{description}
+\item[(1)] 求$\det(A)$
+\item[(2)] 求$\tr(A)$
+\item[(3)] 证明$\rank(A)\geq 2$
+\item[(4)] 为使$\rank(A)=2$，求出$a,b,c,d$应满足的条件
+\item[证(3)] 因为存在
+\[
+\left[
+\begin{array}{cc}
+1 & 0 \\
+0 & 1 \\
+\end{array}
+\right]
+\]
+$\rank(A)\geq 2$
+\item[解(4)] 由于(3)，只需$\det(A)\neq 0$
+\end{description}
+
+\item 设$A$是欧氏空间$\mathbf{R}^n$的一个变换，证若$A$保内积，那么一定线性且正交
+\begin{description}
+\item[证] 此类证明就是把要等于0的东西丢到内积里面。比如证线性。$A(\alpha+\beta)=A(\alpha)+A(\beta)$
+\begin{eqnarray*}
+& &(A(\alpha+\beta)-A(\alpha)-A(\beta),A(\alpha+\beta)-A(\alpha)-A(\beta))\\
+& = & (\alpha+\beta,\alpha+\beta)-2(\alpha+\beta,\alpha)-2(\alpha+\beta,\beta)+(\alpha,\alpha)+(\beta,\beta)+2(\alpha,\beta)\\
+& = & 0
+\end{eqnarray*}
+同理可证$A(k\alpha)=kA(\alpha)$。接下来证正交，只需要证单射，就能得到满射，根据高等代数下10.4定义1可得。证单射，当$\alpha\neq 0$，$(\alpha,\alpha)\neq 0\Rightarrow(A\alpha,A\alpha)\neq 0\Rightarrow A\alpha\neq 0\Rightarrow\ker A=0$
+\end{description}
+
+\item 设$A$是$2003$阶实方阵，且$A^r=0$，$r$是自然数，问$\rank(A)$的最大值是多少
+\begin{description}
+\item[解] 和2006年的一边很像。请使用Sylvester秩不等式，见高等代数上4.5例2
+\end{description}
+
+\item 给定$\mathbf{R}$上线性空间$V$的子空间$W_1,W_2$，证明$\dim(W_1\cap W_2)\geq\dim(W_1)+\dim(W_2)-\dim(V)$
+\begin{description}
+\item[证] 维数公式$\dim(W_1\cap W_2)+\dim(W_1+ W_2) = \dim(W_1)+\dim(W_2)$，显然$W_1+ W_2\subseteq V$
+\end{description}
+
+\item 给定$n$个不同的数$a_1,a_2,\cdots,a_n$，试求一个小于等于$n-1$次的多项式$f(x)$，使得$f(a_i)=b_i$，其中$b_i(i=1,\cdots,n)$也是给定的值
+\begin{description}
+\item[证] $f(x)=c_nx^{n-1}+\cdots+c_1$，然后带进去解范德蒙
+\end{description}
+
+\item 给定$\mathbf{R}$上二维线性空间$V$的线性变换$A$，$A$在一组基下的矩阵表示为
+\[
+A=\left(
+\begin{array}{cc}
+0 & 1 \\
+1-a & 0
+\end{array}
+\right)
+\]
+$a\neq 0$，求$A$的不变子空间
+\begin{description}
+\item[证] $a=1$，$A$为若当块，不变子空间为$V,\{0\}$。$a\neq 1$，自己算
+\end{description}
+
+\item 若$Q$为$n$阶对称正定方阵，$x$为$n$维实向量，证$0\leq x^T(Q+xx^T)^{-1}x<1$
+\begin{description}
+\item[证] 令$A=(Q+xx^T)^{-1}$
+\begin{eqnarray*}
+x^TQ^{-1}x&=&x^TA(Q+xx^T)Q^{-1}x\\
+&=& x^TA(E+xx^TQ^{-1})x\\
+&=& x^TAx+x^TAxx^TQ^{-1}x\\
+&=& x^TAx(1+x^TQ^{-1}x)\\
+\end{eqnarray*}
+从而
+\[
+xA^{-1}x=\frac{x^TQ^{-1}x}{1+x^TQ^{-1}x}
+\]
+当$Q$为$n$阶对称正定，$Q^{-1}$为$n$阶对称正定，从而$x^TQ^{-1}x\geq 0$
+\end{description}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{itemize}

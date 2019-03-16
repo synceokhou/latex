@@ -1,0 +1,129 @@
+\section{2009高代}
+\begin{enumerate}
+\item 计算行列式
+\[
+D_n =
+\left[
+\begin{array}{cccc}
+x+y & x & \cdots & 0 \\
+y & x+y & \cdots & \vdots \\
+\vdots & \vdots & \ddots & x \\
+0 & \cdots & y & x+y \\
+\end{array}\right]
+\]
+\begin{description}
+\item[解] $(x+y)D_{n-1}-xyD_{n-2}=D_n$
+\[
+\begin{cases}
+D_n-xD_{n-1}=y(D_{n-1}-xD_{n-2})\\
+D_n-yD_{n-1}=x(D_{n-1}-yD_{n-2})
+\end{cases}
+\]
+又解得$D_1=x+y,D_2=x^2+xy+y^2$
+\end{description}
+
+\item 已知$A^*$，$B$满足$ABA^{-1}=BA^{-1}+3I$，证$B$可逆，并求$B^{-1}$
+\begin{description}
+\item[解] 通过$A^*$可以求$A,A^{-1}$，然后$AB=B+3A$，然后验证$A-I$可逆，再两边左乘$A^{-1}/3$
+\end{description}
+
+\item 已知$A$，求$A$的特征值，特征向量，$A^k$，$\lim_{l \to \infty}(-\frac{1}{4}A)^k$
+\begin{description}
+\item[解] 求出对角型，显然最后正负号交替只能收敛到零矩阵
+\end{description}
+
+\item 设$A,B$为实正定矩阵，求证$AB$正定的充要条件是$AB=BA$
+\begin{description}
+\item[证] $\Rightarrow$显然，详见高等代数上P348例10
+\end{description}
+
+
+\item 设$f$为$n$次多项式，$f'|f$的充要条件是$f$有$n$重根
+\begin{description}
+\item[证] $\Leftarrow$显然，详见高等代数下P45例8
+\end{description}
+
+\item 设$A$可逆，证$A+\alpha\beta'$可逆的充要条件是$1+\beta'A^{-1}\alpha \neq 0$，并求$A+\alpha\beta'$的逆
+\begin{description}
+\item[证]
+\[
+\left(
+\begin{array}{cc}
+A & \alpha \\
+-\beta' & 1
+\end{array}
+\right)
+\left(
+\begin{array}{cc}
+E & 0 \\
+\beta' & 1
+\end{array}
+\right) = \left(
+\begin{array}{cc}
+A+\alpha\beta' & \alpha \\
+0 & 1
+\end{array}
+\right)
+\]
+另一边
+\[
+\left(
+\begin{array}{cc}
+A & \alpha \\
+-\beta' & 1
+\end{array}
+\right)
+\left(
+\begin{array}{cc}
+E & -A^{-1}\alpha \\
+0 & 1
+\end{array}
+\right) = \left(
+\begin{array}{cc}
+A & 0 \\
+-\beta' & 1+\beta' A^{-1}\alpha
+\end{array}
+\right)
+\]
+这时可以上下两个秩相等，最后算逆矩阵
+\[
+\left(
+\begin{array}{cc}
+A & 0 \\
+-\beta' & 1+\beta' A^{-1}\alpha
+\end{array}
+\right)
+\left(
+\begin{array}{cc}
+A^{-1} & 0 \\
+\frac{\beta'A^{-1}}{1+\beta' A^{-1}\alpha} & \frac{1}{1+\beta' A^{-1}\alpha}
+\end{array}
+\right) = \left(
+\begin{array}{cc}
+E & 0 \\
+0 & 1
+\end{array}
+\right)
+\]
+\end{description}
+
+\item 已知$\psi$为线性空间$V$上的线性变换，$\psi$有特征值为$1$，且特征值$1$的特征子空间是$n-1$维的，证明存在单位向量$\eta$使得$\psi:\alpha \rightarrow \alpha-(\alpha,\eta)\eta$
+\begin{description}
+\item[证] 见高等代数下P483例5，在正交变换的条件下，非常自然引出一维不变子空间
+\end{description}
+
+
+\item 设$A,B$为实矩阵，若$A,B$在复数域上相似则在实数域上也相似
+\begin{description}
+\item[证] 见高等代数上P268例13
+\end{description}
+
+
+
+
+
+
+
+
+
+\end{enumerate}

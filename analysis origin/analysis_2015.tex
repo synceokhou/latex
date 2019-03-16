@@ -1,0 +1,89 @@
+\section{2015数分}
+\begin{enumerate}
+\item 已知数列$x_n$且$\lim_{n \to \infty} x_n = \infty$，证明$\lim_{n \to \infty}\frac{x_1+x_2+\cdots+x_n}{n}=\infty$
+\begin{description}
+\item[证] 缺条件了吧，举个反例，当$x_n=(-1)^nn$时。所以可以补个条件，见数学分析中的典型问题和方法P25，吉米多维奇数学分析习题集题解一P40[139]。不妨设$x_n>0$，$\forall M>0,\exists N>0,\st n>N,x_n>M$
+\begin{eqnarray*}
+\frac{x_1+x_2+\cdots+x_n}{n} - A& = &\frac{x_1-A+x_2-A+\cdots+x_n-A}{n}\\
+& > &\frac{x_1-A+x_2-A+\cdots+x_N-A}{n}+ \frac{M(n-N)}{n}\\
+& > & \frac{x_1-A+x_2-A+\cdots+x_N-A}{n}+ \frac{nM}{n}
+\end{eqnarray*}
+\end{description}
+
+
+\item 求极限$\lim_{\substack{x \to 0 \\ y \to 0}} x^2y^2\ln(x^2+y^2)$
+\begin{description}
+\item[解] $2xy<x^2+y^2=z$
+\end{description}
+
+\item 已知
+\[
+f(x) = \begin{cases}
+ax+b &  x < 0 \\
+x^2+1 &  x \geq 0
+\end{cases}
+\]
+若$f(x)$在$x=0$处导数连续，求$a,b$的值
+\begin{description}
+\item[证] 首先$f(x)$在$x=0$处连续，$f_+(0) = 0+1=0=f(0)=f_-(0)=0+b$。然后$f(x)$在$x=0$处导数连续，$f_+'(0) = 0^2=0=f_-'(0)=a$
+\end{description}
+
+
+\item 已知$f(x)$在$[a,b]$上连续，$(a,b)$内可导，且$f(a)=f(b)=0,\exists c \in (a,b)$，使得$f(c)>0$，证明$\exists \xi \in (a,b)$，使得$f''(\xi)<0$
+\begin{description}
+\item[证] 见数学分析中的典型问题和方法P267的3.3.5，由$f(a)=f(b)=0,\exists c \in (a,b)$，使得$f(c)>0$知最大值必在$(a,b)$内，设为$x_0$，$f'(x_0)=0,f(x_0)>0$，此时
+\[
+f(b)= f(x_0) +\frac{f''(\xi)}{2}(b-x_0)^2,\xi \in (x_0,b)
+\]
+即得$f''(\xi)<0$
+\end{description}
+
+\item 证明
+\[
+f(x)=\sum_{n=1}^\infty \frac{\sin(nx)}{n^3}
+\]连续，且有连续的导函数
+\begin{description}
+\item[证] 大M判别法，之后有定理直接证有连续的导函数？
+\end{description}
+
+\item 已知一个半径为$r$的球，求与之相切的正圆锥的最小体积
+\begin{description}
+\item[解] 圆锥在球外面，画图确定圆锥的顶角，得出体积函数
+\end{description}
+
+\item 设$p(x)$是不超过三次的多项式，证明$\forall a,b ,\int_a^bf(x)\ud x =$
+
+\item 求$\iint_D xy\ud x\ud y$，其中$D$由$y=x^2$与$y=\frac{x}{2}$围成$x>0$的部分
+
+\item 已知空间中两点$A(1,0,-1),B(0,1,1)$，求线段$AB$绕$z$轴旋转一周与$z=1,z=-1$所围体积
+
+\item 已知$f(x)$在$[0,1]$上单调递减，证明$\forall \lambda \in (0,1)$，有
+\[
+\int_0^\lambda f(x)\ud x \geq \lambda \int_0^1 f(x)\ud x
+\]
+\begin{description}
+\item[证]
+\begin{eqnarray*}
+\int_0^\lambda f(x)\ud x \geq \lambda \int_0^{\lambda} f(x)\ud x + \lambda \int_{1-\lambda}^1 f(x)\ud x \\
+(1-\lambda)\int_0^\lambda f(x)\ud x \geq \lambda \int_{1-\lambda}^1 f(x)\ud x \\
+\frac{\int_0^\lambda f(x)\ud x}{\lambda} \geq \frac{\int_{1-\lambda}^1 f(x)\ud x}{1-\lambda}
+\end{eqnarray*}
+然后中值定理
+\end{description}
+
+\item 证明$\frac{\pi}{4}(1-\frac{1}{e})<(\int_0^1 e^{-x^2}\ud x)^2<\frac{16}{25}$
+\begin{description}
+\item[证] 将一元积分换成二元的，然后换极坐标，然后放缩，不用算复杂积分
+\begin{eqnarray*}
+(\int_0^1 e^{-x^2}\ud x)^2 & = & \int_0^1 \int_0^1 e^{-(x^2+y^2)}\ud x\ud y\\
+& > & \iint_{\{x^2+y^2\leq 1,x,y>0\}}e^{-(x^2+y^2)}\ud x\ud y
+\end{eqnarray*}
+另一边
+\begin{eqnarray*}
+(\int_0^1 e^{-x^2}\ud x)^2 & = & \iint_{\{x^2+y^2\leq 1,x,y>0\}}e^{-(x^2+y^2)}\ud x\ud y\\ 
+& &+\iint_{\{x^2+y^2> 1,0<x,y<1\}}e^{-(x^2+y^2)}\ud x\ud y
+\end{eqnarray*}
+\end{description}
+
+
+\end{enumerate}
